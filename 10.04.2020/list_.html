@@ -6,12 +6,13 @@
     <title>Document</title>
     <style>
         body{
-            margin: 0;;
+          
+            margin: 0;
         }
         .cell{
             outline:2px solid black;
-            width: calc(100vw / 8);
-            height: calc(100vw / 8);
+            width: calc(800px / 8);
+            height: calc(800px / 8);
             float: left;
         }
         .light-cell{
@@ -22,36 +23,48 @@
             background-color: gray;
         }
 
+        .row-even{
+            float: left;
+            }
+
+        .row-odd{
+            float: left;
+
+        }
+
 
 
 
     </style>
 </head>
 <body>
-    
-    <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div>
-  </div>
-  <div>
-    <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div>
-  </div>
-  <div>
-    <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div>
-  </div>
-  <div>
-    <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div>
-  </div>
-  <div>
-    <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div>
-  </div>
-  <div>
-    <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div>
-  </div>
-  <div>
-    <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div>
-  </div>
-  <div>
-    <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div></div>
-  </div>
+    <div style="width: 800px;">
+        <div class="row-odd">
+            <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div>
+          </div>
+        
+          <div class="row-odd">
+            <div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div>
+          </div>
+
+          <div class="row-odd">
+            <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div>
+          </div>
+        
+          <div class="row-odd">
+            <div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div>
+          </div>
+
+          <div class="row-odd">
+            <div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div>
+          </div>
+        
+          <div class="row-odd">
+            <div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div><div class="cell dark-cell"></div><div class="cell light-cell"></div>
+          </div>
+ 
+    </div>
+
 </body>
 </body>
 </html>
