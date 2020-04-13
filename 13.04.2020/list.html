@@ -6,6 +6,7 @@
     <title>Document</title>
     <style>
         .spector{
+            margin-bottom: 100px;
             height: 30px;
             outline: 1px solid black;
             background-image: linear-gradient(to right,red 0, red calc(100% / 7 * 1),
@@ -16,9 +17,48 @@
             blue calc(100% / 7 * 5), blue calc(100% / 7 * 6),
             purple calc(100% / 7 * 6), purple calc(100% / 7 * 7));
         }
+
+
+        /* КАРАНДАШ!!!!! */
+
+        .pen{
+            height: 35px;
+            width: calc(100% - 200px);
+            background-image: linear-gradient(yellow 10px, rgb(161, 170, 32) 10px 25px, yellow 25px 35px); 
+            padding-top: 1px;
+           
+        }
+
+        .pen--md{
+            width: 0;
+            height: 0;
+            border: 25px solid transparent;
+            border-left: 65px solid tomato;
+            border-radius: 50%;
+            margin-left: calc(100% - 20px);
+            margin-top: -8px;
+           
+        }
+
+        .penBlack{
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-left: 50px solid black;
+            border-radius: 50%;
+            margin-left: calc(100% - 32px);
+            margin-top: -10px;
+
+        }
     </style>
 </head>
 <body>
     <div class="spector"></div>
+
+    <div class="pen">
+        <div class="pen--md">
+            <div class="penBlack"></div>
+        </div>
+    </div>
 </body>
 </html>
