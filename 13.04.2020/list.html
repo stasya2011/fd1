@@ -8,7 +8,13 @@
         .spector{
             height: 30px;
             outline: 1px solid black;
-            background-image: linear-gradient(to right, red 10%, orange 10% 20%, yellow 20% 30%, green 30% 40%, lightblue 40% 50%, blue 50% 80%, purple 80% 100%);
+            background-image: linear-gradient(to right,red 0, red calc(100% / 7 * 1),
+            orange calc(100% / 7 * 1), orange calc(100% / 7 * 2),
+            yellow calc(100% / 7 * 2), yellow calc(100% / 7 * 3),
+            #008000 calc(100% / 7 * 3),#008000 calc(100% / 7 * 4) ,
+            lightblue calc(100% / 7 * 4), lightblue calc(100% / 7 * 5),
+            blue calc(100% / 7 * 5), blue calc(100% / 7 * 6),
+            purple calc(100% / 7 * 6), purple calc(100% / 7 * 7));
         }
     </style>
 </head>
