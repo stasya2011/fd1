@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         
+
+.wrapper{
+    margin-top: 100px;
+}
+        .pen{
+            height: 35px;
+            width: calc(100% - 200px);
+            background-image: linear-gradient(yellow 10px, rgb(161, 170, 32) 10px 25px, yellow 25px 35px); 
+            float: left;
+            
+           
+        }
+
+        .pen--md{
+            width: 0;
+            height: 0;
+            border: 25px solid transparent;
+            border-left: 65px solid tomato;
+            border-radius: 50%;           
+     
+            margin-top: -8px;
+            margin-left: -15px;            
+            float: left;
+          
+           
+        }
+
+        .penBlack{
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-left: 50px solid black;
+            border-radius: 50%;
+            margin-left: -55px;
+            margin-top: 6px;
+            float: left;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="pen"></div>
+        <div class="pen--md"></div>    
+        <div class="penBlack"></div>
+    </div>
+</body>
+</html>
