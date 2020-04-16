@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -7,58 +7,59 @@
     <title>Cheess</title>
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/chess" type="text/css" />
     <style>
-       
+ 
         .row,
         .row--odd{
             font-family: 'ChessMedium';
-            font-size: 10vw;
-            letter-spacing: -4vw;
-            text-align: center;
+            font-size: 12.5vmin;
+            letter-spacing:-6.2vmin;
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0;
+            width: 100vmin;
+            height: 12.5vmin;
+            background-size: 100vmin 12.5vmin ;
 
         }
         .row {
-            
-            height: 10vw;
+           
             background-image:
                 linear-gradient(to right,
 
-                    rgb(54, 47, 47) 0, rgb(54, 47, 47) calc(100vw / 8 * 1),
-                    rgb(171, 163, 195) calc(100vw / 8 * 1), rgb(171, 163, 195) calc(100vw / 8 * 2),
+                    rgb(54, 47, 47) 0, rgb(54, 47, 47) 12.5vmin,
+                    rgb(171, 163, 195) calc(100vmin / 8 * 1), rgb(171, 163, 195) calc(100vmin / 8 * 2),
 
-                    rgb(54, 47, 47) calc(100vw / 8 * 2), rgb(54, 47, 47) calc(100vw / 8 * 3),
-                    rgb(171, 163, 195) calc(100vw / 8 * 3), rgb(171, 163, 195) calc(100vw / 8 * 4),
+                    rgb(54, 47, 47) calc(100vmin / 8 * 2), rgb(54, 47, 47) calc(100vmin / 8 * 3),
+                    rgb(171, 163, 195) calc(100vmin / 8 * 3), rgb(171, 163, 195) calc(100vmin / 8 * 4), 
 
-                    rgb(54, 47, 47) calc(100vw / 8 * 4), rgb(54, 47, 47) calc(100vw / 8 * 5),
-                    rgb(171, 163, 195) calc(100vw / 8 * 5), rgb(171, 163, 195) calc(100vw / 8 * 6),
+                    rgb(54, 47, 47) calc(100vmin / 8 * 4), rgb(54, 47, 47) calc(100vmin / 8 * 5),
+                    rgb(171, 163, 195) calc(100vmin / 8 * 5), rgb(171, 163, 195) calc(100vmin / 8 * 6),
 
-                    rgb(54, 47, 47) calc(100vw / 8 * 6), rgb(54, 47, 47) calc(100vw / 8 * 7),
-                    rgb(171, 163, 195) calc(100vw / 8 * 7), rgb(171, 163, 195) calc(100vw));
-
+                    rgb(54, 47, 47) calc(100vmin / 8 * 6), rgb(54, 47, 47) calc(100vmin / 8 * 7),
+                    rgb(171, 163, 195) calc(100vmin / 8 * 7), rgb(171, 163, 195) calc(100vmin) 
+                    );
         }
 
-
-        .row--odd {
-            
+        .row--odd {           
        
-            height: 10vw;
             background-image:
                 linear-gradient(to right,
 
-                    rgb(171, 163, 195) 0, rgb(171, 163, 195) calc(100vw / 8 * 1),
-                    rgb(54, 47, 47) calc(100vw / 8 * 1), rgb(54, 47, 47) calc(100vw / 8 * 2),
+                    rgb(171, 163, 195) 0, rgb(171, 163, 195) calc(100vmin / 8 * 1),
+                    rgb(54, 47, 47) calc(100vmin / 8 * 1), rgb(54, 47, 47) calc(100vmin / 8 * 2),
 
-                    rgb(171, 163, 195) calc(100vw / 8 * 2), rgb(171, 163, 195) calc(100vw / 8 * 3),
-                    rgb(54, 47, 47) calc(100vw / 8 * 3), rgb(54, 47, 47) calc(100vw / 8 * 4),
+                    rgb(171, 163, 195) calc(100vmin / 8 * 2), rgb(171, 163, 195) calc(100vmin / 8 * 3),
+                    rgb(54, 47, 47) calc(100vmin / 8 * 3), rgb(54, 47, 47) calc(100vmin / 8 * 4),
 
-                    rgb(171, 163, 195) calc(100vw / 8 * 4), rgb(171, 163, 195) calc(100vw / 8 * 5),
-                    rgb(54, 47, 47) calc(100vw / 8 * 5), rgb(54, 47, 47) calc(100vw / 8 * 6),
+                    rgb(171, 163, 195) calc(100vmin / 8 * 4), rgb(171, 163, 195) calc(100vmin / 8 * 5),
+                    rgb(54, 47, 47) calc(100vmin / 8 * 5), rgb(54, 47, 47) calc(100vmin / 8 * 6),
 
-                    rgb(171, 163, 195) calc(100vw / 8 * 6), rgb(171, 163, 195) calc(100vw / 8 * 7),
-                    rgb(54, 47, 47) calc(100vw / 8 * 7), rgb(54, 47, 47) calc(100vw / 8 * 8));
+                    rgb(171, 163, 195) calc(100vmin / 8 * 6), rgb(171, 163, 195) calc(100vmin / 8 * 7),
+                    rgb(54, 47, 47) calc(100vmin / 8 * 7), rgb(54, 47, 47) calc(100vmin / 8 * 8));
 
-        }
-      
-       
+        } 
+             
     </style>
 </head>
 
@@ -66,6 +67,7 @@
 
 
     <div class="row">
+        
         r
         n
         l
@@ -74,8 +76,9 @@
         l
         n
         r
+    
     </div>
-    <div class="row--odd">
+    <div class="row--odd">    
        p
        p
        p
@@ -83,8 +86,7 @@
        p
        p
        p
-       p
-
+       p    
     </div>
 
     <div class="row"></div>
@@ -93,7 +95,7 @@
     <div class="row"></div>
     <div class="row--odd"></div>
 
-    <div class="row">
+    <div class="row">    
         P
         P
         P
@@ -101,9 +103,9 @@
         P
         P
         P
-        P
+        P    
     </div>
-    <div class="row--odd">
+    <div class="row--odd">    
         R
         N
         L
@@ -112,11 +114,7 @@
         L
         N
         R
-    </div>
-
-
-
+    </div> 
 
 </body>
-
 </html>
