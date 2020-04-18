@@ -8,6 +8,7 @@
 
         body>div{
             margin: 8vmin;
+            font-size: 3vmin;
           
         }
      
@@ -62,7 +63,7 @@
 
     div div:nth-of-type(2) div:nth-child(1),
   div div:nth-last-child(2) div:nth-child(1){
-    width: calc(300px / 6);
+    width: 8vmin;
     height: 8vmin; 
        background-image: url('img.png');
        background-repeat: no-repeat;
@@ -73,7 +74,7 @@
 
   div div:nth-of-type(3) div:nth-child(1),
   div div:nth-last-child(3) div:nth-child(1){
-    width: calc(300px / 6);
+    width: 8vmin;
     height: 8vmin; 
        background-image: url('img.png');
        background-repeat: no-repeat;
@@ -83,7 +84,7 @@
   }
 
   div div:nth-of-type(4) div:nth-child(1){
-    width: calc(300px / 6);
+    width: 8vmin;
     height: 8vmin; 
        background-image: url('img.png');
        background-repeat: no-repeat;
@@ -93,7 +94,7 @@
   }  
 
   div div:nth-of-type(5) div:nth-child(1){
-    width: calc(300px / 6);
+    width:8vmin;
     height: 8vmin; 
     background-image: url('img.png');
     background-repeat: no-repeat;
@@ -126,7 +127,7 @@
    
     div div:nth-of-type(2) div:nth-child(8),
   div div:nth-last-child(2) div:nth-child(8){
-    width: calc(300px / 6);
+    width: 8vmin;
     height: 8vmin; 
        background-image: url('img.png');
        background-repeat: no-repeat;
@@ -137,7 +138,7 @@
 
   div div:nth-of-type(3) div:nth-child(8),
   div div:nth-last-child(3) div:nth-child(8){
-    width: calc(300px / 6);
+    width: 8vmin;
     height: 8vmin; 
        background-image: url('img.png');
        background-repeat: no-repeat;
@@ -147,7 +148,7 @@
   }
 
   div div:nth-of-type(4) div:nth-child(8){
-    width: calc(300px / 6);
+    width: 8vmin;
     height: 8vmin; 
        background-image: url('img.png');
        background-repeat: no-repeat;
@@ -157,7 +158,7 @@
   }  
 
   div div:nth-of-type(5) div:nth-child(8){
-    width: calc(300px / 6);
+    width: 8vmin;
     height: 8vmin; 
     background-image: url('img.png');
     background-repeat: no-repeat;
@@ -175,69 +176,59 @@
 div div:nth-last-of-type(1) div:last-child::after{
 
     content: "1";
-    outline: red 1px solid;
     margin-left: 8vmin;
     
 }
 
 div div:nth-of-type(1) div:last-child::before{
     content: "1";
-    outline: red 1px solid;
     margin-left: -3vmin;
 }
 
 div div:nth-of-type(8) div:nth-child(7)::after{
 content: "2";
-outline: red 1px solid;
 margin-left: 8vmin;
 
 }
 
 div div:nth-of-type(1) div:nth-child(7)::before{
 content: "2";
-outline: red 1px solid;
 margin-left: -3vmin;
 
 }
 
 div div:nth-of-type(8) div:nth-child(6)::after{
 content: "3";
-outline: red 1px solid;
 margin-left: 8vmin;
 
 }
 
 div div:nth-of-type(1) div:nth-child(6)::before{
 content: "3";
-outline: red 1px solid;
 margin-left: -3vmin;
 
 }
 
 div div:nth-of-type(8) div:nth-child(5)::after{
 content: "4";
-outline: red 1px solid;
 margin-left: 8vmin;
 
 }
 
 div div:nth-of-type(1) div:nth-child(5)::before{
 content: "4";
-outline: red 1px solid;
 margin-left: -3vmin;
 
 }
 
 div div:nth-of-type(8) div:nth-child(4)::after{
 content: "5";
-outline: red 1px solid;
 margin-left: 8vmin;
 
 }
 
 div div:nth-of-type(1) div:nth-child(4)::before{
 content: "5";
-outline: red 1px solid;
 margin-left: -3vmin;
 
 }
@@ -245,42 +236,36 @@ margin-left: -3vmin;
 
 div div:nth-of-type(8) div:nth-child(3)::after{
 content: "6";
-outline: red 1px solid;
 margin-left: 8vmin;
 
 }
 
 div div:nth-of-type(1) div:nth-child(3)::before{
 content: "6";
-outline: red 1px solid;
 margin-left: -3vmin;
 
 }
 
 div div:nth-of-type(8) div:nth-child(2)::after{
 content: "7";
-outline: red 1px solid;
 margin-left: 8vmin;
 
 }
 
 div div:nth-of-type(1) div:nth-child(2)::before{
 content: "7";
-outline: red 1px solid;
 margin-left: -3vmin;
 
 }
 
 div div:nth-of-type(8) div:nth-child(1)::after{
 content: "8";
-outline: red 1px solid;
 margin-left: 8vmin;
 
 }
 
 div div:nth-of-type(1) div:nth-child(1)::before{
 content: "8";
-outline: red 1px solid;
 margin-left: -3vmin;
 
 }
@@ -288,9 +273,70 @@ margin-left: -3vmin;
 
  /* буквы */
  
+    div div:first-child div:nth-child(1)::after{
+        content: "a";
+        position: absolute;
+        top: 3vmin;
+        left: calc(8vmin + 4vmin)
+    }
+
+    div div:first-child div:nth-child(2)::after{
+        content: "b";
+        position: absolute;
+        top: 3vmin;
+        left: calc(8vmin * 2 + 4vmin)
+    }
+
+    div div:first-child div:nth-child(3)::after{
+        content: "c";
+        position: absolute;
+        top: 3vmin;
+        left: calc(8vmin * 3 + 4vmin)
+    }
+
+    div div:first-child div:nth-child(4)::after{
+        content: "d";
+        position: absolute;
+        top: 3vmin;
+        left: calc(8vmin * 4 + 4vmin)
+    }
+
+    div div:first-child div:nth-child(5)::after{
+        content: "e";
+        position: absolute;
+        top: 3vmin;
+        left: calc(8vmin * 5 + 4vmin)
+        
+    }
+
+    div div:first-child div:nth-child(6)::after{
+        content: "f";       
+        position: absolute;
+        top: 3vmin;
+        left: calc(8vmin * 6 + 4vmin)
+    }
+
+    div div:first-child div:nth-child(7)::after{
+        content: "g h";   
+        letter-spacing: 3vmin;     
+        position: absolute;
+        top: 3vmin;
+        left: calc(8vmin * 7 + 4vmin)
+    }
 
 
- 
+
+
+     div div:last-child div:nth-child(1)::before{
+        content: "a b c d e f g h";  
+        letter-spacing: calc(3vmin);   
+        position: absolute;
+        top: calc(8vmin * 8 + 9vmin);
+        left: calc(8vmin * 1 + 4vmin)
+       
+    } 
+
+
     </style>
 </head>
 <body>
@@ -307,79 +353,79 @@ margin-left: -3vmin;
             <div></div>
         </div>
         <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
 
         <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-        </div>
-
-        <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
 
         <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
 
         <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
 
         <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
 
 
