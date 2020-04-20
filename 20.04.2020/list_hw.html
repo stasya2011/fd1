@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin-left: 8vmin;
+            font-size: 0;
+
+        }
+
+        body>div {
+            width: calc(8vmin*8);
+            height: calc(8vmin*10);
+            outline: 1px solid red;
+
+        }
+
+        body>div>div {
+            width: 8vmin;
+            height: 8vmin;
+            outline: 1px solid royalblue;
+            display: inline-block;
+
+        }
+
+
+        /* горизонтальные столбцы для цифр */
+        body>div::after,
+        body>div::before {
+            font-size: 3vmin;
+            content: "abcdefgh";
+            width: calc(8vmin * 8);
+            height: 8vmin;
+            display: inline-block;
+            letter-spacing: 6.6vmin;
+            margin-left: 3.5vmin;
+            
+            vertical-align: top;
+            line-height: 8vmin;
+            text-align: center;
+
+        }
+
+
+
+        /* вертикальные столбцы для цифр */
+
+        body>div>div:nth-child(8n)::after,
+        body>div>div:nth-child(8n+1)::before {
+            content: " ";
+            display: block;
+            width: 8vmin;
+            height: 8vmin;
+
+            outline: 1px solid darkcyan;
+            background-color: darkgoldenrod;
+
+        }
+
+
+        body>div>div:nth-child(8n+1)::before {
+            margin-left: -8vmin;
+                    
+        }
+
+        body>div>div:nth-child(8n)::after {
+            margin-left: 8vmin;
+        }
+
+      
+        body>div>div:nth-child(-2n+7),       
+        body>div>div:nth-child(10),
+        body>div>div:nth-child(12),
+        body>div>div:nth-child(14),
+        body>div>div:nth-child(16),
+        body>div>div:nth-child(17),
+        body>div>div:nth-child(19),
+        body>div>div:nth-child(21),
+        body>div>div:nth-child(23),
+        body>div>div:nth-child(26),
+        body>div>div:nth-child(28),
+        body>div>div:nth-child(30),
+        body>div>div:nth-child(32),
+
+        body>div>div:nth-last-child(10),
+        body>div>div:nth-last-child(12),
+        body>div>div:nth-last-child(14),
+        body>div>div:nth-last-child(16),
+        body>div>div:nth-last-child(17),
+        body>div>div:nth-last-child(19),
+        body>div>div:nth-last-child(21),
+        body>div>div:nth-last-child(23),
+        body>div>div:nth-last-child(26),
+        body>div>div:nth-last-child(28),
+        body>div>div:nth-last-child(30),
+        body>div>div:nth-last-child(32),        
+        body>div>div:nth-last-child(-2n+7)   
+        {
+            background-color: darkgreen;
+        }
+
+        div>div:nth-child(9){
+            background-image: url('img.png');
+            background-repeat: no-repeat;
+            background-size: calc(8vmin*6);
+            width: 8vmin;
+            height: 8vmin;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>
