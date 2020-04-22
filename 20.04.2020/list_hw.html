@@ -63,11 +63,24 @@
             background-color: darkgoldenrod; */
             
             line-height: 8vmin;
-            text-align: center;        
+            text-align: center;  
            
-            
         }
 
+        body>div{
+            counter-reset: leftNumber rightNumber;
+        }
+
+        body>div>div:nth-child(8n+1)::before{
+            counter-increment: leftNumber 1;
+            content: counter(leftNumber);
+        }
+
+        body>div>div:nth-child(8n)::after{
+            counter-increment: rightNumber 1;
+            content: counter(rightNumber);
+        }
+/* 
         body>div>div:nth-child(8)::after,
         body>div>div:nth-child(1)::before {
             content: "8";
@@ -104,7 +117,7 @@
         body>div>div:nth-last-child(32)::before,
         body>div>div:nth-last-child(25)::after {
             content: "4";
-        }
+        } */
 
 
 
