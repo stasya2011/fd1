@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>div>div {
+            font-size: 5vmin;
+            background-color: #aa2daa66;
+            margin-bottom: 2vmin;
+            width: 10vmin;
+            height: 10vmin;
+            display: inline-block;
+            text-align: center;
+            line-height: 10vmin;
+            vertical-align: middle;
+            border-radius: 50%;
+        }
+
+        body>div {
+            counter-reset: one two 1 three 2;
+        }
+
+
+        /* 123*/
+        body>div:first-of-type>div::after {
+            counter-increment: one;
+            content: counter(one);
+        }
+
+
+
+        /* 132 */
+        body>div:nth-of-type(2)>div::after {
+            counter-increment: one;
+            content: counter(one);
+        }
+
+        body>div:nth-of-type(2)>div:nth-child(2)::after {
+            counter-increment: three;
+            content: counter(three);
+        }
+
+        body>div:nth-of-type(2)>div:nth-child(3):after {
+            counter-increment: two;
+            content: counter(two);
+        }
+
+
+        /* 213 */
+        body>div:nth-of-type(3)>div::after {
+            counter-increment: two;
+            content: counter(two);
+        }
+        body>div:nth-of-type(3)>div:nth-child(2)::after {
+            counter-increment: one;
+            content: counter(one);
+        }
+        body>div:nth-of-type(3)>div:nth-child(3)::after {
+            counter-increment: three;
+            content: counter(three);
+        }
+
+
+
+        /* 231 */
+
+        body>div:nth-of-type(4)>div:nth-child(1)::after {
+            counter-increment: two;
+            content: counter(two);
+        }
+        body>div:nth-of-type(4)>div:nth-child(2)::after {
+            counter-increment: three;
+            content: counter(three);
+        }
+        body>div:nth-of-type(4)>div:nth-child(3)::after {
+            counter-increment: one;
+            content: counter(one);
+        }
+
+
+
+        /* 312 */
+        body>div:nth-of-type(5)>div:nth-child(1)::after{
+            counter-increment: three;
+            content: counter(three);
+        }
+        body>div:nth-of-type(5)>div:nth-child(2)::after{
+            counter-increment: one;
+            content: counter(one);
+        }
+        body>div:nth-of-type(5)>div:nth-child(3)::after{
+            counter-increment: two;
+            content: counter(two);
+        }
+
+
+
+        /* 321 */
+        body>div:nth-of-type(6)>div:nth-child(1)::after{
+            counter-increment: three;
+            content: counter(three);
+        }
+
+        body>div:nth-of-type(6)>div:nth-child(2)::after{
+            counter-increment: two;
+            content: counter(two);
+        }
+
+        
+        body>div:nth-of-type(6)>div:nth-child(3)::after{
+            counter-increment: one;
+            content: counter(one);
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+
+</html>
