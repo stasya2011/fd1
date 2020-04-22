@@ -15,14 +15,13 @@
         body>div {
             width: calc(8vmin*8);
             height: calc(8vmin*10);
-            outline: 1px solid red;
-
+           
         }
 
         body>div>div {
             width: 8vmin;
             height: 8vmin;
-            outline: 1px solid royalblue;
+            outline: 1px solid green;
             display: inline-block;
 
         }
@@ -49,8 +48,10 @@
 
         /* вертикальные столбцы для цифр */
 
+    /* ВОПРОС: если я пишу что-либо в content ячейки меняют своё положение */
         body>div>div:nth-child(8n)::after,
         body>div>div:nth-child(8n+1)::before {
+               
             content: " ";
             display: block;
             width: 8vmin;
@@ -71,6 +72,9 @@
             margin-left: 8vmin;
         }
 
+div\
+
+          /* как сократить? */
       
         body>div>div:nth-child(-2n+7),       
         body>div>div:nth-child(10),
@@ -103,13 +107,113 @@
             background-color: darkgreen;
         }
 
-        div>div:nth-child(9){
+        /* как сократить? */
+
+        body>div>div:nth-child(-n+8),
+        body>div>div:nth-last-child(-n+8),
+        body>div>div:nth-child(9),
+        body>div>div:nth-child(10),
+        body>div>div:nth-child(11),
+        body>div>div:nth-child(12),
+        body>div>div:nth-child(13),
+        body>div>div:nth-child(14),
+        body>div>div:nth-child(15),
+        body>div>div:nth-child(16),
+        
+        body>div>div:nth-last-child(9),
+        body>div>div:nth-last-child(10),
+        body>div>div:nth-last-child(11),
+        body>div>div:nth-last-child(12),
+        body>div>div:nth-last-child(13),
+        body>div>div:nth-last-child(14),
+        body>div>div:nth-last-child(15),
+        body>div>div:nth-last-child(16){
             background-image: url('img.png');
             background-repeat: no-repeat;
             background-size: calc(8vmin*6);
             width: 8vmin;
             height: 8vmin;
         }
+
+        /* пешки */
+
+        body>div>div:nth-last-child(9),
+        body>div>div:nth-last-child(10),
+        body>div>div:nth-last-child(11),
+        body>div>div:nth-last-child(12),
+        body>div>div:nth-last-child(13),
+        body>div>div:nth-last-child(14),
+        body>div>div:nth-last-child(15),
+        body>div>div:nth-last-child(16){
+            background-position: calc(-8.4vmin * 5) calc(-16vmin/2);
+        }
+
+
+        body>div>div:nth-child(9),
+        body>div>div:nth-child(10),
+        body>div>div:nth-child(11),
+        body>div>div:nth-child(12),
+        body>div>div:nth-child(13),
+        body>div>div:nth-child(14),
+        body>div>div:nth-child(15),
+        body>div>div:nth-child(16){
+            background-position: calc(-8.4vmin * 5) 0;
+        }
+
+        /* слон */
+
+        body>div>div:first-child,
+        body>div>div:nth-child(8){
+            background-position: calc(-8.4vmin *2) 0;  
+        }
+
+        
+        body>div>div:last-child,
+        body>div>div:nth-last-child(8){
+            background-position: calc(-8.4vmin *2) calc(-16vmin/2);  
+        }
+
+
+        /*конь */
+    
+        body>div>div:first-child+div,
+        body>div>div:nth-child(7){
+            background-position: calc(-8.4vmin * 4) 0;  
+        }
+
+        body>div>div:nth-last-child(2),
+        body>div>div:nth-last-child(7){
+            background-position: calc(-8.4vmin * 4) calc(-16vmin/2);  
+        }
+
+            /*к*/
+    
+            body>div>div:nth-child(3),
+        body>div>div:nth-child(6){
+            background-position: calc(-8.4vmin * 3) 0;  
+        }
+
+        body>div>div:nth-last-child(3),
+        body>div>div:nth-last-child(6){
+            background-position: calc(-8.4vmin * 3) calc(-16vmin/2);  
+        }
+
+       
+        body>div>div:nth-child(4){
+            background-position: calc(-8.4vmin * 1) 0;  
+        }
+
+        body>div>div:nth-last-child(5){
+            background-position: calc(-8.4vmin * 1) calc(-16vmin/2);  
+        }
+
+        body>div>div:nth-last-child(4){
+            background-position: 0 calc(-16vmin/2);  
+        }
+
+
+        
+
 
     </style>
 </head>
