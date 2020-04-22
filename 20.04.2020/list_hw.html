@@ -48,19 +48,23 @@
 
         /* вертикальные столбцы для цифр */
 
-    /* ВОПРОС: если я пишу что-либо в content ячейки меняют своё положение */
+    /* ВОПРОС: если я пишу что-либо в content ячейки меняют своё положение, как это исправить?*/
         body>div>div:nth-child(8n)::after,
         body>div>div:nth-child(8n+1)::before {
-               
-            content: " ";
-            display: block;
+            font-size: 3vmin; 
+            content: "";
+            display: inline-block;
             width: 8vmin;
             height: 8vmin;
-
             outline: 1px solid darkcyan;
             background-color: darkgoldenrod;
-
+            
+            line-height: 8vmin;
+            text-align: center;
+            
         }
+
+     
 
 
         body>div>div:nth-child(8n+1)::before {
