@@ -41,10 +41,13 @@
             vertical-align: top;
             line-height: 8vmin;
             text-align: center;
+            
 
         }
 
-
+        div>div {
+            vertical-align:bottom;
+        }
 
         /* вертикальные столбцы для цифр */
 
@@ -56,13 +59,55 @@
             display: inline-block;
             width: 8vmin;
             height: 8vmin;
-            outline: 1px solid darkcyan;
-            background-color: darkgoldenrod;
+            /* outline: 1px solid darkcyan;
+            background-color: darkgoldenrod; */
             
             line-height: 8vmin;
-            text-align: center;
+            text-align: center;        
+           
             
         }
+
+        body>div>div:nth-child(8)::after,
+        body>div>div:nth-child(1)::before {
+            content: "8";
+        }
+
+        body>div>div:nth-child(16)::after,
+        body>div>div:nth-child(9)::before {
+            content: "7";
+        }
+
+        body>div>div:nth-child(24)::after,
+        body>div>div:nth-child(17)::before {
+            content: "6";
+        }
+
+        body>div>div:nth-child(32)::after,
+        body>div>div:nth-child(25)::before {
+            content: "7";
+        }
+
+        body>div>div:nth-last-child(8)::before,
+        body>div>div:nth-last-child(1)::after {
+            content: "1";
+        }
+
+        body>div>div:nth-last-child(16)::before,
+        body>div>div:nth-last-child(9)::after {
+            content: "2";
+        }
+        body>div>div:nth-last-child(24)::before,
+        body>div>div:nth-last-child(17)::after {
+            content: "3";
+        }
+        body>div>div:nth-last-child(32)::before,
+        body>div>div:nth-last-child(25)::after {
+            content: "4";
+        }
+
+
+
 
      
 
