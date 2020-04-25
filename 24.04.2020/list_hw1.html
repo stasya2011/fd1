@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head {
+            width: 80vmin;
+            height: 80vmin;
+            border: 4vmin solid black;
+            border-radius: 50%;
+            position: relative;
+            background-color: yellow;
+        }
+
+
+        /* глаза */
+
+        .eye {
+            width: 15vmin;
+            height: 15vmin;
+            border: 4vmin solid black;
+            border-radius: 50%;
+            position: absolute;
+            top: 2vmin;
+            left: 1vmin;
+            
+
+        }
+
+        .eye_right,
+        .eye_left  {
+            top: 27.3vmin;
+
+        }
+
+        .eye_right {           
+            left: 34vmin;      
+
+        }
+
+
+        .eye_left {           
+            left: 15vmin;        
+
+        }
+
+        .eye_right--md {
+            right: 15vmin;
+            top: 27.3vmin;
+        }
+
+        .eye_left--md {
+            right: 34vmin;
+            top: 27.3vmin;
+        }
+
+
+
+        body>div>div:nth-child(4),
+        body>div>div:nth-child(7) {
+            width: 25vmin;
+            height: 14vmin;
+            position: absolute;
+            top: 15vmin;          
+            overflow: hidden;
+        }
+
+        body>div>div:nth-child(7) {        
+            right: 14vmin;           
+
+        }
+
+        body>div>div:nth-child(4){
+            left: 14vmin;
+        }
+
+
+
+
+        /* рот */
+
+        .circle {
+            width: 0;
+            height: 0;
+            border: 2vmin solid black;
+            border-radius: 50%;
+            position: absolute;
+
+        }
+
+        .left {
+            left: 11.5vmin;
+            top: 38.7vmin;
+
+        }
+
+        .right {
+            right: 10.5vmin;
+            top: 38.2vmin;
+
+        }
+
+        .mouth {
+            width: 50vmin;
+            height: 50vmin;
+            border-radius: 50%;
+            border: 4vmin solid black;
+            position: absolute;
+            top: -26vmin;
+       
+        }
+
+        body>div>div:nth-child(1) {
+            width: 60vmin;
+            height: 40vmin;
+            position: relative;
+            left: 17vmin;
+            top: 40vmin;
+            left: calc(30vmin / 2 - 3.6vmin);
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="head">
+
+        <div>
+            <div class="mouth"></div>
+        </div>
+        <div class="circle left"></div>
+        <div class="circle right"></div>
+
+
+        <div>
+            <div class="eye"></div>
+        </div>
+        <div class="circle eye_left"></div>
+        <div class="circle eye_right"></div>
+
+        <div>
+            <div class="eye"></div>
+        </div>
+        <div class="circle eye_left--md"></div>
+        <div class="circle eye_right--md"></div>
+
+    </div>
+
+
+</body>
+
+</html>
