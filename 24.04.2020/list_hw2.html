@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Формулы</title>
+    <style>
+        body{
+            font-size: 6vmin;
+            }
+
+        .task_1,
+        .task_2{
+            position: absolute;
+                   
+        }
+        .task_2{
+            margin-top: 20vmin;
+            margin-bottom: 10vmin;
+        }
+
+        .task_3{
+            padding-top: 33vmin;
+        }
+        .task_1>span:first-child::after,
+        .task_1>span:nth-last-child(1)::after,
+        .two::after{
+            
+            font-size: 4vmin;
+            position:relative;
+            top: -3vmin;
+            /* left: 0; */
+        }
+
+        .task_1>span:nth-of-type(1)::after,
+        .task_1>span:nth-last-child(1)::after{
+            content: "3";
+        }
+
+        .two::after{
+            content: "2";
+        }
+        
+
+        .down::after{
+           
+            font-size: 4vmin;
+            position:relative;
+            top: 3vmin;
+        }
+
+        .down_n::after{
+            content: "n";
+        }
+       .down_1::after{
+           content: "1";
+       }
+
+       .down_k::after{
+           content: "k";
+       }
+        
+        .italic{
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div>
+       <p class="task_1"> <span> (x+3) </span> &#61; <span class="two"> x </span> &#43; <span class="two">  3x </span>y &#43; <span class="two">3xy</span> &#43; <span>y</span></p>
+
+       <p class="task_2"><span class="down down_1">&Delta;x</span> &#43; <span class="down two">&Delta;x</span>  &#43; 	&hellip;  &#43;
+        <span class="down down_n">&Delta;x</span>&#61; <span class="down down_k">&sum;&Delta;x</span></p>
+
+        <p class="task_3">Если 	&forall; <span class="italic"> x </span>	&isin; R такого, что |<span class="italic">x</span>| 
+        &le; 1  &exist; <span class="italic">y</span> , то 	&xi; &le; &infin;</p>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
