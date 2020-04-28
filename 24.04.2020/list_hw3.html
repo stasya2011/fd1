@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+
+        body>div{
+            width: 80vmin;
+            height: 80vmin;
+            outline: 1px solid royalblue;
+            position: fixed;      
+           
+        }
+
+        body>div>div{
+            width: 10vmin;
+            height: 10vmin;
+            outline: 1px solid royalblue;
+            position: absolute;
+            background-color: blanchedalmond;
+            
+        }
+
+   
+
+        /* 1-ая строка */
+        
+        body>div>div:nth-child(-8n){
+            top: 0;
+        }
+
+        
+
+        div>div:nth-child(16n+2),
+        div>div:nth-child(16n+4),
+        div>div:nth-child(16n+6),
+        div>div:nth-child(16n+8),
+        div>div:nth-child(16n+9),
+        div>div:nth-child(16n+11),
+        div>div:nth-child(16n+13),
+        div>div:nth-child(16n+15)
+
+        {
+            background-color: slateblue;
+        }
+
+   
+        body>div>div:nth-child(1),
+        body>div>div:nth-child(9),
+        body>div>div:nth-child(17),
+        body>div>div:nth-child(25),
+        body>div>div:nth-child(33),
+        body>div>div:nth-child(41),
+        body>div>div:nth-child(49),
+        body>div>div:nth-child(57)
+        
+        {
+        left: calc(10vmin * 0);      
+   
+   
+       }
+
+       body>div>div:nth-child(2),
+       body>div>div:nth-child(10),
+       body>div>div:nth-child(18),
+       body>div>div:nth-child(26),
+       body>div>div:nth-child(34),
+       body>div>div:nth-child(42),
+       body>div>div:nth-child(50),
+       body>div>div:nth-child(58)
+       {
+        left: calc(10vmin);       
+     
+       }
+
+       body>div>div:nth-child(3),
+       body>div>div:nth-child(11),
+       body>div>div:nth-child(19),
+       body>div>div:nth-child(27),
+       body>div>div:nth-child(35),
+       body>div>div:nth-child(43),
+       body>div>div:nth-child(51),
+       body>div>div:nth-child(59)
+       {
+        left: calc(10vmin * 2);
+     
+   
+       }
+
+       body>div>div:nth-child(4),
+       body>div>div:nth-child(12),
+       body>div>div:nth-child(20),
+       body>div>div:nth-child(28),
+       body>div>div:nth-child(36),
+       body>div>div:nth-child(44),
+       body>div>div:nth-child(52),
+       body>div>div:nth-child(60)
+       {
+        left: calc(10vmin * 3);
+     
+       }
+
+       body>div>div:nth-child(5),
+       body>div>div:nth-child(13),
+       body>div>div:nth-child(21),
+       body>div>div:nth-child(29),
+       body>div>div:nth-child(37),
+       body>div>div:nth-child(45),
+       body>div>div:nth-child(53),
+       body>div>div:nth-child(61)
+       {
+        left: calc(10vmin * 4);      
+       }
+
+       body>div>div:nth-child(6),
+       body>div>div:nth-child(14),
+       body>div>div:nth-child(22),
+       body>div>div:nth-child(30),
+       body>div>div:nth-child(38),
+       body>div>div:nth-child(46),
+       body>div>div:nth-child(54),
+       body>div>div:nth-child(62)
+       {
+        left: calc(10vmin * 5); 
+   
+       }
+
+       body>div>div:nth-child(7),
+       body>div>div:nth-child(15),
+       body>div>div:nth-child(23),
+       body>div>div:nth-child(31),
+       body>div>div:nth-child(39),
+       body>div>div:nth-child(47),
+       body>div>div:nth-child(55),
+       body>div>div:nth-child(63)
+       {
+        left: calc(10vmin * 6);  
+          
+       }
+
+       body>div>div:nth-child(8),
+       body>div>div:nth-child(16),
+       body>div>div:nth-child(24),
+       body>div>div:nth-child(32),
+       body>div>div:nth-child(40),
+       body>div>div:nth-child(48),
+       body>div>div:nth-child(56),
+       body>div>div:nth-child(64)
+       {
+        left: calc(10vmin * 7); 
+      
+   
+       }
+
+       
+        /* 2-ая строка */
+
+        body>div>div:nth-child(9),
+        body>div>div:nth-child(10),
+        body>div>div:nth-child(11),
+        body>div>div:nth-child(12),
+        body>div>div:nth-child(13),
+        body>div>div:nth-child(14),
+        body>div>div:nth-child(15),
+        body>div>div:nth-child(16),
+        body>div>div:nth-child(65)
+        {
+            top: 10vmin;
+        }
+
+
+
+
+ /* 3-ая строка */
+
+        body>div>div:nth-child(17),
+        body>div>div:nth-child(18),
+        body>div>div:nth-child(19),
+        body>div>div:nth-child(20),
+        body>div>div:nth-child(21),
+        body>div>div:nth-child(22),
+        body>div>div:nth-child(23),
+        body>div>div:nth-child(24){
+            top: calc(10vmin * 2);
+        }
+
+     
+       /* 4-ая строка */
+
+       body>div>div:nth-child(25),
+        body>div>div:nth-child(26),
+        body>div>div:nth-child(27),
+        body>div>div:nth-child(28),
+        body>div>div:nth-child(29),
+        body>div>div:nth-child(30),
+        body>div>div:nth-child(31),
+        body>div>div:nth-child(32){
+            top: calc(10vmin * 3);
+        }
+
+     
+         /* 5 строка */
+        body>div>div:nth-child(33),
+        body>div>div:nth-child(34),
+        body>div>div:nth-child(35),
+        body>div>div:nth-child(36),
+        body>div>div:nth-child(37),
+        body>div>div:nth-child(38),
+        body>div>div:nth-child(39),
+        body>div>div:nth-child(40){
+        top: calc(10vmin * 4);
+        }
+
+      
+
+
+        /* 6 строка */
+        body>div>div:nth-child(41),
+        body>div>div:nth-child(42),
+        body>div>div:nth-child(43),
+        body>div>div:nth-child(44),
+        body>div>div:nth-child(45),
+        body>div>div:nth-child(46),
+        body>div>div:nth-child(47),
+        body>div>div:nth-child(48){
+        top: calc(10vmin *5);
+        }
+
+           /* 7 строка */
+        body>div>div:nth-child(49),
+        body>div>div:nth-child(50),
+        body>div>div:nth-child(51),
+        body>div>div:nth-child(52),
+        body>div>div:nth-child(53),
+        body>div>div:nth-child(54),
+        body>div>div:nth-child(55),
+        body>div>div:nth-child(56)
+        {
+        top: calc(10vmin * 6);
+        }
+
+        /* 8 строка */
+        body>div>div:nth-child(57),
+        body>div>div:nth-child(58),
+        body>div>div:nth-child(59),
+        body>div>div:nth-child(60),
+        body>div>div:nth-child(61),
+        body>div>div:nth-child(62),
+        body>div>div:nth-child(63),
+        body>div>div:nth-child(64)
+        {
+        top: calc(10vmin * 7);
+        }
+
+
+        
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
