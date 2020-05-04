@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [type=checkbox]{
+            display: none; /*убрали маркировку чекбокса*/
+        }
+        label{
+            line-height: 3em;
+            outline: 1px solid forestgreen;
+            display: inline-block;
+          
+        }
+
+    
+        /*оформляем внешний вид лейбл*/
+        .my-checkbox {
+            width: 3em;
+            height: 3em;
+            display:none;
+            outline: 1px solid palevioletred;
+            background-color: greenyellow;
+            margin-left: 1vmin;
+            vertical-align: top;
+            line-height: 3em;
+            text-align: center;
+            
+        
+        }
+
+
+        /* применить свойства к .my-checkbox-cheслув которым где-нибудь есть сосед чекнутого input с type=checkbox*/
+        [type=checkbox]:checked ~ .my-checkbox-checked{
+            display:inline-block;         
+        
+        }
+
+              /* применить свойства к .my-checkbox-cheслув которым где-нибудь НЕТ сосед чекнутого input с type=checkbox*/
+              [type=checkbox]:not(:checked) ~ .my-checkbox-unchecked{
+            display:inline-block;   
+            background-color: orange;      
+        
+        }
+    </style>
+</head>
+<body>
+    <input id="turkmenbashi" type="checkbox">
+        <label for="turkmenbashi">Кандидат в туркменбаши #1
+    </label>
+    <span class="my-checkbox my-checkbox-checked"> * </span>
+    <span class="my-checkbox my-checkbox-unchecked"> - </span>
+
+</body>
+</html>

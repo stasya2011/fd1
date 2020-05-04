@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            outline: 1px solid red;
+            display: inline-block;
+       
+        }
+        label{
+            display: block;
+        }
+        #slider{
+            position: absolute;
+        }
+
+        #slider::after{
+            content: "";
+            display: block;
+            border: 20px solid red;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: calc(50% - 20px);
+            left: -15px;
+
+        }
+
+        #one:checked ~ .nextSlide{
+            outline: 2px solid green;
+        }
+
+        
+
+
+
+    </style>
+</head>
+<body>
+    <input type="radio" id="one" name="postcard checked"> 
+    <input type="radio" id="two" name="postcard">
+    <input type="radio" id="three" name="postcard">
+    <input type="radio" id="four" name="postcard">
+    <input type="radio" id="five" name="postcard">
+    <div id="slider">
+      <section class="slide">
+        <img src="https://vk.vkfaces.com/604829/v604829812/21e0e/jCxnyhu09r4.jpg">
+        <label for="one" class="prevSlide"></label>
+        <label for="two" class="nextSlide"></label>
+      </section>
+      <section class="slide">
+        <img src="https://pp.userapi.com/c837625/v837625883/1f184/PkpPLNNBr2U.jpg">
+        <label for="" class="prevSlide"></label>
+        <label for="" class="nextSlide"></label>
+      </section>
+      <section class="slide">
+        <img src="http://i.playground.ru/i/95/33/40/20/user/avatar.jpg?v1">
+        <label for="" class="prevSlide"></label>
+        <label for="" class="nextSlide"></label>
+      </section>
+      <section class="slide">
+        <img src="https://pp.userapi.com/c630323/v630323161/20bb3/T3Az9-vrmR4.jpg">
+        <label for="" class="prevSlide"></label>
+        <label for="" class="nextSlide"></label>
+      </section>
+      <section class="slide">
+        <img src="https://pp.userapi.com/c630520/v630520889/4664/wtEVyP_teoA.jpg">
+        <label for="" class="prevSlide"></label>
+        <label for="" class="nextSlide"></label>
+      </section>
+      <div class="pins">
+        <label for=""></label>
+        <label for=""></label>
+        <label for=""></label>
+        <label for=""></label>
+        <label for=""></label>
+      </div>
+    </div>
+</body>
+</html>

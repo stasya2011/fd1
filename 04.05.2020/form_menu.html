@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ #menu,#submenu {
+  display: none;
+}
+#menu~ul,#submenu~ul {
+  display: none;
+  list-style: none;
+  padding-left: 0;
+}
+#menu:not(:checked)~label[for=menu]:nth-of-type(2) {
+  display: none;
+}
+
+#menu:checked+label[for=menu] {
+  display: none;
+}
+
+#menu:checked~ul{
+  display: block;
+  outline: 1px solid green;
+  width: 100px;
+}
+
+#menu~ul>li:nth-of-type(2)::after {
+  content: '>';
+  float: right;
+}
+
+#menu~ul>li:nth-of-type(2) {
+  position: relative;
+}
+
+#submenu~ul {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 120px;
+  outline: 1px solid blue;
+}
+#submenu:checked~ul {
+  display: block;
+}
+a:visited, label {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#menu~ul>li:hover {
+  background-color: rgba(60, 127, 216, 0.5);
+  background-color: orangered;
+}
+
+#submenu~ul>li:hover {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+           
+    </style>
+</head>
+<body>
+    <input id="menu" type="checkbox">
+    <label for="menu">Показать меню</label>
+    <label for="menu">Cпрятать меню</label>
+    <ul class="menu-list">
+      <li><a href="#">Пунтк 1</a></li>
+      <li>
+        <input id="submenu" type="checkbox">
+        <label for="submenu">Пунтк 2</label>
+        <ul>
+          <li>Пункт 2.1</li>
+          <li>Пункт 2.2</li>
+          <li>Пункт 2.3</li>
+          <li>Пункт 2.4</li>
+          <li>Пункт 2.5</li>
+        </ul>
+        <li><a href="#">Пунтк 3</a></li>
+        <li><a href="#">Пунтк 4</a></li>
+    </ul>    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+/* Борьба с выподением флоатов: распорки */
+        .container{
+            width: 80vmin;           
+            background-color: rgba(255, 255, 0, 0.4);
+            padding: 5vmin;
+           
+        }
+
+        .column { 
+        color: white;
+        min-height: 35vmin;
+            background-color: darksalmon;
+        border: 2px solid #34495e;
+        float: left;
+        font-size: 5vmin;
+         
+        }
+
+        .column1{
+            width: 30vmin;
+            margin-right: 8vmin;   
+          
+        }
+
+        .column2{
+            width: 40vmin;
+        
+        }
+
+        .clearfix{
+            height: 5vmin;
+            background-color: darkcyan;
+            clear: both; /*убираем обтекание и блок спускается под блоки колонок, и одновременно растягивается фон контейнера*/
+            /* height: 0;  */ /*можно задать высоту распорки 0 и она исчехнит из бока контейнер*/
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Борьба с выподением флоатов: распорки -->
+    <div class="container">
+        <div class="column column1">column1</div>
+        <div class="column column2">column2</div>
+        <!-- распорка -->
+        <div class="clearfix"></div> 
+    </div>
+
+
+     <!-- Борьба с выподением флоатов:  
+</body>
+</html>
