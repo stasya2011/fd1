@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width: 20vmin;
+            height: 20vmin;
+            border: 2px solid gray;
+            display: inline-block;
+        }
+        #ex1:checked ~ #section1,
+        #ex2:checked ~ #section2,
+        #ex3:checked ~ #section3,
+        #ex4:checked ~ #section4{
+            border-radius: 50%;
+            background-color: green;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <input type="radio" name="slider" id="ex1">
+    <input type="radio" name="slider" id="ex2">
+    <input type="radio" name="slider" id="ex3">
+    <input type="radio" name="slider" id="ex4">
+<br>
+    <section id="section1"></section>
+    <section id="section2"></section>
+    <section id="section3"></section>
+    <section id="section4"></section>
+<br>
+    <label for="ex1">one </label>
+    <label for="ex2">two </label>
+    <label for="ex3">three </label>
+    <label for="ex4">four </label>
+
+</body>
+</html>

@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        #slider>section{
+            display: none;
+        }
 
-
-
+        #slider>section>img{
+            width: 20vmin;
+            height: 20vmin;
+            display: inline-block;
+        }
+        #one:checked~#slider>section:nth-of-type(2){
+            outline: 7px solid greenyellow;
+            width: 20vmin;
+            height: 20vmin;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
