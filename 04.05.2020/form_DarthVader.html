@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+      body{
+        margin: 0;
+      }
         #slider>section{
             display: none;
         }
@@ -14,16 +17,51 @@
             height: 20vmin;
             display: inline-block;
         }
-        #one:checked~#slider>section:nth-of-type(2){
-            outline: 7px solid greenyellow;
+            #one:checked~#slider>section:nth-of-type(1),
+            #two:checked~#slider>section:nth-of-type(2),
+            #three:checked~#slider>section:nth-of-type(3),
+            #four:checked~#slider>section:nth-of-type(4),
+            #five:checked~#slider>section:nth-of-type(5)
+        {
+            /* outline: 7px solid greenyellow; */
             width: 20vmin;
             height: 20vmin;
             display: inline-block;
+            position: relative;
+        }
+
+        .prevSlide::before,
+        .nextSlide::after{
+          content: "";
+          border: 10px solid red; 
+          border-top-color: transparent;
+          border-bottom-color: transparent;        
+          display: inline-block;
+          width:0;
+          height: 0;
+          position: absolute;
+          top: calc(10vmin - 10px);
+         
+        }
+
+        .prevSlide::before{
+          border-left-color: transparent;       
+          left: -2vmin;
+        }
+
+
+        .nextSlide::after{
+          border-right: transparent;     
+          right: 0;
+        }
+
+        input{
+          display:none;
         }
     </style>
 </head>
 <body>
-<input type="radio" id="one" name="starWars">
+<input type="radio" id="one" name="starWars" checked>
 <input type="radio" id="two" name="starWars">
 <input type="radio" id="three" name="starWars">
 <input type="radio" id="four" name="starWars">
@@ -41,18 +79,18 @@
   </section>
   <section class="slide">
     <img src="http://i.playground.ru/i/95/33/40/20/user/avatar.jpg?v1">
-    <label for="" class="prevSlide"></label>
-    <label for="" class="nextSlide"></label>
+    <label for="two" class="prevSlide"></label>
+    <label for="four" class="nextSlide"></label>
   </section>
   <section class="slide">
     <img src="https://pp.userapi.com/c630323/v630323161/20bb3/T3Az9-vrmR4.jpg">
-    <label for="" class="prevSlide"></label>
-    <label for="" class="nextSlide"></label>
+    <label for="three" class="prevSlide"></label>
+    <label for="five" class="nextSlide"></label>
   </section>
   <section class="slide">
     <img src="https://pp.userapi.com/c630520/v630520889/4664/wtEVyP_teoA.jpg">
-    <label for="" class="prevSlide"></label>
-    <label for="" class="nextSlide"></label>
+    <label for="four" class="prevSlide"></label>
+    <label for="one" class="nextSlide"></label>
   </section>
   <div class="pins">
     <label for="one"></label>
