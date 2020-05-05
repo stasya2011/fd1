@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+                width: 100vmin;
+                height: 100vmin;
+                background-size: 100vmin 456vmin;   /*разм картинкаи 580*2650(px)*/          
+                background-image: url("calc.png");
+                position: absolute;
+            }
+        .car,
+        .home,
+        .phone{
+            background-size: calc(100vmin / 2) calc(456vmin / 2);   /*разм картинкаи 580*2650*/          
+            background-image: url("calc.png");
+            outline: 2px solid red;
+            width: 15vmin;
+            height: 15vmin;
+            position: absolute;
+         
+        }
+
+        .car{          
+                background-position: calc(-100vmin / 3.6 / 2) calc(-456vmin / 4);                
+                top: 50vmin;
+                left: 0;
+       
+        }
+
+        .home{
+            background-position: calc(-48vmin / 2) calc(-320vmin / 2);              
+                top: 50vmin;
+                left: 30vmin;
+        }
+
+        .phone{
+            background-position: calc(-100vmin / 5 / 2) calc(-456vmin / 3 / 2);              
+                top: 50vmin;
+                left: 60vmin;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="car"></div>
+        <div class="home"></div>
+        <div class="phone"></div>        
+
+    </div>
+</body>
+</html>
