@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculator</title>
+  <style>
+   .wrapper{
+          width: 100vmin;
+          height: 90vmin;
+          background-size: 100vmin 456vmin;   /*разм картинкаи 580*2650(px)*/          
+          background-image: url("calc.png");
+          position: absolute;
+
+          outline: 2px solid orange;    
+            }
+        .car,
+        .home,
+        .phone,
+        .plane{
+            background-size: calc(100vmin / 2) calc(456vmin / 2);   /*разм картинкаи 580*2650*/          
+            background-image: url("calc.png");
+            width: 15vmin;
+            height: 15vmin;
+            position: absolute;
+         
+        }
+
+  
+       
+
+        .phone{
+            background-position: calc(-100vmin / 5 / 2) calc(-456vmin / 3 / 2);              
+            top: 69vmin;
+            left: 25vmin;
+        }
+        .car{          
+            background-position: calc(-100vmin / 3.6 / 2) calc(-456vmin / 4);                
+            top: calc(90vmin - 30vmin);
+            left: 37vmin;
+       
+        }
+
+        .home{
+            background-position: calc(-48vmin / 2) calc(-320vmin / 2);              
+            top: 59vmin;
+            left: 53vmin;
+        }
+        .plane{
+            background-position: -85vmin -660vmin;              
+            top: 55vmin;
+            left: 69vmin;
+      
+        }
+
+        
+  </style>
+</head>
+<body style="background: black">
+  <div class="wrapper"></div>
+
+    <div class="phone"></div> 
+    <div class="car"></div>
+    <div class="home"></div>    
+    <div class="plane"></div>            
+
+</div>
+
+  <div data-element="calculator"></div>
+  <script src="assets/js/calculator.js"></script>
+
+</body>
+</html>
