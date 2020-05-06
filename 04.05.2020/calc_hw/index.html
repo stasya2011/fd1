@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>calculator</title>
   <style>
+    body{
+      font-family: Arial;
+      font-size: 1.125em; /*шрифт в браузере по умолчанию 16px чтобы получить 18px 18/16*/
+    }
    .wrapper{
           width: 100vmin;
           height: 90vmin;
           background-size: 100vmin 456vmin;   /*разм картинкаи 580*2650(px)*/          
           background-image: url("calc.png");
           position: absolute;
-
           outline: 2px solid orange;    
             }
         .car,
@@ -23,11 +26,7 @@
             width: 15vmin;
             height: 15vmin;
             position: absolute;
-         
-        }
-
-  
-       
+        }       
 
         .phone{
             background-position: calc(-100vmin / 5 / 2) calc(-456vmin / 3 / 2);              
@@ -53,20 +52,31 @@
       
         }
 
+      [type=text]{
         
+        width: 12vmin;
+        height: 3vmin;
+       background-color: transparent;
+       border-color:transparent;
+        position: absolute;
+        top: 9vmin;
+        left: 35vmin;
+      } 
   </style>
 </head>
 <body style="background: black">
-  <div class="wrapper"></div>
 
-    <div class="phone"></div> 
-    <div class="car"></div>
-    <div class="home"></div>    
-    <div class="plane"></div>            
 
-</div>
+  <div data-element="calculator" name="money" id="money"> 
+    <div class="wrapper">
+      <input type="text" maxlength="7">
+      <div class="phone"></div> 
+      <div class="car"></div>
+      <div class="home"></div>    
+      <div class="plane"></div>               
+    </div>
+  </div>
 
-  <div data-element="calculator"></div>
   <script src="assets/js/calculator.js"></script>
 
 </body>
