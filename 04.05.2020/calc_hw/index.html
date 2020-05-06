@@ -1,83 +1,145 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>calculator</title>
   <style>
-    body{
+    body {
       font-family: Arial;
-      font-size: 1.125em; /*шрифт в браузере по умолчанию 16px чтобы получить 18px 18/16*/
-    }
-   .wrapper{
-          width: 100vmin;
-          height: 90vmin;
-          background-size: 100vmin 456vmin;   /*разм картинкаи 580*2650(px)*/          
-          background-image: url("calc.png");
-          position: absolute;
-          outline: 2px solid orange;    
-            }
-        .car,
-        .home,
-        .phone,
-        .plane{
-            background-size: calc(100vmin / 2) calc(456vmin / 2);   /*разм картинкаи 580*2650*/          
-            background-image: url("calc.png");
-            width: 15vmin;
-            height: 15vmin;
-            position: absolute;
-        }       
-
-        .phone{
-            background-position: calc(-100vmin / 5 / 2) calc(-456vmin / 3 / 2);              
-            top: 69vmin;
-            left: 25vmin;
-        }
-        .car{          
-            background-position: calc(-100vmin / 3.6 / 2) calc(-456vmin / 4);                
-            top: calc(90vmin - 30vmin);
-            left: 37vmin;
-       
-        }
-
-        .home{
-            background-position: calc(-48vmin / 2) calc(-320vmin / 2);              
-            top: 59vmin;
-            left: 53vmin;
-        }
-        .plane{
-            background-position: -85vmin -660vmin;              
-            top: 55vmin;
-            left: 69vmin;
+      font-size: 1.125em;
+      /*шрифт в браузере по умолчанию 16px чтобы получить 18px 18/16*/
+      color: whitesmoke;
       
-        }
+    }
 
-      [type=text]{
-        
-        width: 12vmin;
-        height: 3vmin;
-       background-color: transparent;
-       border-color:transparent;
-        position: absolute;
-        top: 9vmin;
-        left: 35vmin;
-      } 
+    .wrapper {
+      width: 100vmin;
+      height: 90vmin;
+      background-size: 100vmin 456vmin;
+      /*разм картинкаи 580*2650(px)*/
+      background-image: url("calc.png");
+      position: absolute;
+      outline: 2px solid orange;
+    }
+
+    .car,
+    .home,
+    .phone,
+    .plane {
+      background-size: calc(100vmin / 2) calc(456vmin / 2);
+      /*разм картинкаи 580*2650*/
+      background-image: url("calc.png");
+      width: 15vmin;
+      height: 15vmin;
+      position: absolute;
+    }
+
+    .phone {
+      background-position: calc(-100vmin / 5 / 2) calc(-456vmin / 3 / 2);
+      top: 69vmin;
+      left: 25vmin;
+    }
+
+    .car {
+      background-position: calc(-100vmin / 3.6 / 2) calc(-456vmin / 4);
+      top: calc(90vmin - 30vmin);
+      left: 37vmin;
+
+    }
+
+    .home {
+      background-position: calc(-48vmin / 2) calc(-320vmin / 2);
+      top: 59vmin;
+      left: 53vmin;
+    }
+
+    .plane {
+      background-position: -85vmin -660vmin;
+      top: 55vmin;
+      left: 69vmin;
+
+    }
+
+    /*форма ввода суммы*/
+    [type=text] {
+
+      width: 12vmin;
+      height: 3vmin;
+      background-color: transparent;
+      border-color: transparent;
+      position: absolute;
+      top: 9vmin;
+      left: 35vmin;
+    }
+
+    /*rub and usd*/
+    .section:nth-of-type(1) {
+      position: absolute;
+      top: 9.2vmin;
+      left: 50vmin
+    }
+
+    .section:nth-of-type(2) {
+      position: absolute;
+      top: 18vmin;
+      left: 45vmin
+    }
+
+    .value {
+      width: 50px;
+    }
+
+    label {
+      display: none;
+    }
+
+    #toRub:checked~.section>.rub,
+    #toDollar:checked~.section>.dollar {
+      display: block;
+
+    }
+
+    input[type=radio] {
+      display: none;
+
+    }
   </style>
 </head>
+
 <body style="background: black">
 
 
-  <div data-element="calculator" name="money" id="money"> 
+  <div data-element="calculator" name="money" id="money">
     <div class="wrapper">
       <input type="text" maxlength="7">
-      <div class="phone"></div> 
+
+
+      <input id="toRub" type="radio" name="cash" checked>
+      <input id="toDollar" type="radio" name="cash">
+
+
+      <div class="section">
+        <label for="toDollar" class='value rub'>RUB</label>
+        <label for="toRub" class='value dollar'>USD</label>
+      </div>
+
+      <div class="section">
+        <label for="toDollar" class='value rub'>RUB</label>
+        <label for="toRub" class='value dollar'>USD</label>
+      </div>
+
+
+      <div class="phone"></div>
       <div class="car"></div>
-      <div class="home"></div>    
-      <div class="plane"></div>               
+      <div class="home"></div>
+      <div class="plane"></div>
     </div>
   </div>
 
   <script src="assets/js/calculator.js"></script>
 
 </body>
+
 </html>
