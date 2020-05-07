@@ -88,8 +88,17 @@
       left: 45vmin
     }
 
+    .section:nth-of-type(3){
+      position: absolute;
+      top: 4vmin;
+      right: 29vmin
+    }
+
+  .section:nth-of-type(3)>label>span{
+      font-size: 12px;
+  }
     .value {
-      width: 50px;
+      width: 70px;
     }
 
     .section>label {
@@ -107,6 +116,10 @@
 
     }
 
+
+
+
+    /*месяца*/
     .section2>label{
       display: none;
       position: absolute;
@@ -127,7 +140,6 @@
     #ten:checked~.section2>.eleven,
     #eleven:checked~.section2>.twelve,
     #twelve:checked~.section2>.one
-
     {
       display: block;
     }
@@ -157,25 +169,14 @@
     #seven:checked~.goal>.plane,
     #eight:checked~.goal>.plane,
     #nine:checked~.goal>.plane,
-    #ten:checked~.goal>.plane,
-  
- 
+    #ten:checked~.goal>.plane, 
     #five:checked~.goal>.home,
     #six:checked~.goal>.home,
     #seven:checked~.goal>.home
     {
       opacity: 0.2;
     }
-    /* #five:checked~.goal>.car, */
-    /* #five:not(:checked)~.goal>.phone
-    {
-      opacity: 0.2;
-    } */
-
-    /* #twelve:checked~.goal>.phone,
-    #two:checked~.goal>.phone{
-         opacity: 1;
-    } */
+ 
   </style>
 </head>
 
@@ -201,6 +202,10 @@
         <label for="toRub" class='value dollar'>USD</label>
       </div>
 
+      <div class="section">
+        <label for="toDollar" class='value rub'>0<span>руб</span> 00</label>
+        <label for="toRub" class='value dollar'>$0.00</label>
+      </div>
 
       <input id="one" type="radio" name="month" >
       <input id="two" type="radio" name="month">
