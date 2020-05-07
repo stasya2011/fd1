@@ -21,7 +21,7 @@
       /*разм картинкаи 580*2650(px)*/
       background-image: url("calc.png");
       position: absolute;
-      outline: 2px solid orange;
+     
     }
 
     .car,
@@ -34,6 +34,7 @@
       width: 15vmin;
       height: 15vmin;
       position: absolute;
+      
     }
 
     .phone {
@@ -91,7 +92,7 @@
       width: 50px;
     }
 
-    label {
+    .section>label {
       display: none;
     }
 
@@ -101,10 +102,80 @@
 
     }
 
-    input[type=radio] {
+    input[name="cash"] {
       display: none;
 
     }
+
+    .section2>label{
+      display: none;
+      position: absolute;
+      top: 18vmin;
+      left: 63vmin
+
+    }
+
+    #one:checked ~.section2>.two,
+    #two:checked~.section2>.three,
+    #three:checked~.section2>.four,
+    #four:checked~.section2>.five,
+    #five:checked~.section2>.six,
+    #six:checked~.section2>.seven,
+    #seven:checked~.section2>.eight,
+    #eight:checked~.section2>.nine,
+    #nine:checked~.section2>.ten,
+    #ten:checked~.section2>.eleven,
+    #eleven:checked~.section2>.twelve,
+    #twelve:checked~.section2>.one
+
+    {
+      display: block;
+    }
+
+
+    input[name="month"]{
+      display: none;
+    }
+
+
+    #twelve:checked~.goal,
+    #one:checked~.goal   
+    {
+
+      opacity: 0.2
+    } 
+    
+    #two:checked ~ .goal>div:not(.phone),
+    #three:checked ~ .goal>div:not(.phone),
+    #four:checked ~ .goal>div:not(.phone)
+    {
+      opacity: 0.2;
+    }
+ 
+    #five:checked~.goal>.plane,
+    #six:checked~.goal>.plane,
+    #seven:checked~.goal>.plane,
+    #eight:checked~.goal>.plane,
+    #nine:checked~.goal>.plane,
+    #ten:checked~.goal>.plane,
+  
+ 
+    #five:checked~.goal>.home,
+    #six:checked~.goal>.home,
+    #seven:checked~.goal>.home
+    {
+      opacity: 0.2;
+    }
+    /* #five:checked~.goal>.car, */
+    /* #five:not(:checked)~.goal>.phone
+    {
+      opacity: 0.2;
+    } */
+
+    /* #twelve:checked~.goal>.phone,
+    #two:checked~.goal>.phone{
+         opacity: 1;
+    } */
   </style>
 </head>
 
@@ -131,10 +202,42 @@
       </div>
 
 
-      <div class="phone"></div>
-      <div class="car"></div>
-      <div class="home"></div>
-      <div class="plane"></div>
+      <input id="one" type="radio" name="month" >
+      <input id="two" type="radio" name="month">
+      <input id="three" type="radio" name="month">
+      <input id="four" type="radio" name="month">
+      <input id="five" type="radio" name="month">
+      <input id="six" type="radio" name="month">
+      <input id="seven" type="radio" name="month">
+      <input id="eight" type="radio" name="month">
+      <input id="nine" type="radio" name="month">
+      <input id="ten" type="radio" name="month">
+      <input id="eleven" type="radio" name="month">
+      <input id="twelve" type="radio" name="month" checked>
+
+      <div class="section2">
+        <label for="one" class="one">1</label>
+        <label for="two" class="two">2</label>
+        <label for="three" class="three">3</label>
+        <label for="four" class="four">4</label>
+        <label for="five" class="five">5</label>
+        <label for="six" class="six">6</label>
+        <label for="seven" class="seven">7</label>   
+        <label for="eight" class="eight">8</label>   
+        <label for="nine" class="nine">9</label>
+        <label for="ten" class="ten">10</label> 
+        <label for="eleven" class="eleven">11</label>
+        <label for="twelve" class="twelve">12</label>           
+      </div>
+ 
+  
+
+      <div class="goal">
+        <div class="phone"></div>
+        <div class="car"></div>
+        <div class="home"></div>
+        <div class="plane"></div>
+      </div>  
     </div>
   </div>
 
