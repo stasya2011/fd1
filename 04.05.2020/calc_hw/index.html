@@ -9,8 +9,9 @@
     body {
       font-family: Arial;
       font-size: 1.125em;
+      font-weight: 700;
       /*шрифт в браузере по умолчанию 16px чтобы получить 18px 18/16*/
-      color: whitesmoke;
+      color: rgb(166, 223, 132);
       
     }
 
@@ -76,88 +77,150 @@
     }
 
     /*rub and usd*/
-    .section:nth-of-type(1) {
+    .section span{
+      display: none;
+
+    }
+
+    .section{
       position: absolute;
-      top: 9.2vmin;
-      left: 50vmin
+      left: 51vmin;
+      top:9.2vmin;
+
     }
 
-    .section:nth-of-type(2) {
+    #vault:checked~.section span:nth-of-type(2),
+    #vault:not(:checked)~.section span:nth-of-type(1){
+      display: inline-block;
+     
+    }  
+
+    .next::before{
+      content: "\2227";      
+      top: -2.2vmin;
+     
+    }
+
+    .prev::before{
+      content: "\2228";     
+      bottom: -1.8vmin;    
+
+    }
+
+    .prev::before,
+    .next::before{
       position: absolute;
-      top: 18vmin;
-      left: 45vmin
+      left: 2vmin;
+      font-size: small;  
+      display:inline-block;
+      vertical-align: middle;
+      line-height: 2vmin;
+      text-align: center;
     }
 
-    .section:nth-of-type(3){
-      position: absolute;
-      top: 4vmin;
-      right: 29vmin
-    }
-
-  .section:nth-of-type(3)>label>span{
-      font-size: 12px;
-  }
-    .value {
-      width: 70px;
-    }
-
-    .section>label {
+    [type="checkbox"]{
       display: none;
     }
 
-    #toRub:checked~.section>.rub,
-    #toDollar:checked~.section>.dollar {
+    .vault_2{      
+      display: inline-block;
+      width: 1.5em;
+      height: 1em;
+      position: absolute;
+      top: 0;
+      left: 45vmin;
+      top: 18vmin
+
+    }
+    #vault:checked~.vault_2::before{
+      content: "USD";
+     
+    }
+    #vault:not(:checked)~.vault_2::before{
+      content: "RUB";
+   
+    }
+
+    .vault_3>span{
+      display:none;
+
+    }
+    #vault:checked~.vault_3 span:nth-of-type(2){
       display: block;
-
+     
     }
 
-    input[name="cash"] {
-      display: none;
+    #vault:not(:checked)~.vault_3 span:nth-of-type(1){
+      display: block;
+    }
 
+    .vault_3{
+      position: absolute;
+      left: 60vmin;
+      top: 4vmin;
     }
 
 
-
-
-    /*месяца*/
-    .section2>label{
+    /*месяца*/  
+    
+    .section2>div{
       display: none;
       position: absolute;
+      width: 1.5em;
+      height: 1em;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 1em;      
       top: 18vmin;
-      left: 63vmin
+      right: 34vmin;
+    }
+
+    .section2>div>label:nth-of-type(1){
+      position: absolute;
+      top: -3vmin;
+      left:2vmin;
+    
+      font-size: small;
+
+    }
+    
+    .section2>div>label:nth-of-type(2){
+      position: absolute;
+      bottom: -3vmin;
+      left: 2vmin;     
+      font-size: small;
 
     }
 
-    #one:checked ~.section2>.two,
-    #two:checked~.section2>.three,
-    #three:checked~.section2>.four,
-    #four:checked~.section2>.five,
-    #five:checked~.section2>.six,
-    #six:checked~.section2>.seven,
-    #seven:checked~.section2>.eight,
-    #eight:checked~.section2>.nine,
-    #nine:checked~.section2>.ten,
-    #ten:checked~.section2>.eleven,
-    #eleven:checked~.section2>.twelve,
-    #twelve:checked~.section2>.one
+    #one:checked ~ .section2>._1,
+    #two:checked ~ .section2>._2,
+    #three:checked ~ .section2>._3,
+    #four:checked ~ .section2>._4,
+    #five:checked ~ .section2>._5,
+    #six:checked ~ .section2>._6,
+    #seven:checked ~ .section2>._7,
+    #eight:checked ~ .section2>._8,
+    #nine:checked ~ .section2>._9,
+    #ten:checked ~ .section2>._10,
+    #eleven:checked ~ .section2>._11,
+    #twelve:checked ~ .section2>._12
     {
       display: block;
     }
 
-
-    input[name="month"]{
+    [name="month"]{
       display: none;
     }
 
-
-    #twelve:checked~.goal,
-    #one:checked~.goal   
+/*прозрачность*/
+ 
+    #one:checked~.goal,
+    #two:checked ~ .goal   
     {
 
       opacity: 0.2
-    } 
-    
-    #two:checked ~ .goal>div:not(.phone),
+    }     
+   
     #three:checked ~ .goal>div:not(.phone),
     #four:checked ~ .goal>div:not(.phone)
     {
@@ -169,7 +232,8 @@
     #seven:checked~.goal>.plane,
     #eight:checked~.goal>.plane,
     #nine:checked~.goal>.plane,
-    #ten:checked~.goal>.plane, 
+    #ten:checked~.goal>.plane,
+    #eleven:checked~.goal>.plane,  
     #five:checked~.goal>.home,
     #six:checked~.goal>.home,
     #seven:checked~.goal>.home
@@ -192,23 +256,21 @@
 
 
       <div class="section">
-        <label for="vault">RUB</label>
-        <label for="vault">USD</label>
+        <label for="vault" class="next"></label>
+        <label for="vault" class="prev"></label>
         <span>RUB</span>
         <span>USD</span>
+        
       </div>
 
-      <div class="section">
-        <label for="toDollar" class='value rub'>RUB</label>
-        <label for="toRub" class='value dollar'>USD</label>
+      <span class="vault_2"></span>
+      <div class="vault_3">
+        <span>00руб00коп</span>
+        <span>$0.00</span>
       </div>
+      
 
-      <div class="section">
-        <label for="toDollar" class='value rub'>0<span>руб</span> 00</label>
-        <label for="toRub" class='value dollar'>$0.00</label>
-      </div>
-
-      <input id="one" type="radio" name="month" >
+      <input id="one" type="radio" name="month" checked>
       <input id="two" type="radio" name="month">
       <input id="three" type="radio" name="month">
       <input id="four" type="radio" name="month">
@@ -219,24 +281,82 @@
       <input id="nine" type="radio" name="month">
       <input id="ten" type="radio" name="month">
       <input id="eleven" type="radio" name="month">
-      <input id="twelve" type="radio" name="month" checked>
+      <input id="twelve" type="radio" name="month">
 
       <div class="section2">
-        <label for="one" class="one">1</label>
-        <label for="two" class="two">2</label>
-        <label for="three" class="three">3</label>
-        <label for="four" class="four">4</label>
-        <label for="five" class="five">5</label>
-        <label for="six" class="six">6</label>
-        <label for="seven" class="seven">7</label>   
-        <label for="eight" class="eight">8</label>   
-        <label for="nine" class="nine">9</label>
-        <label for="ten" class="ten">10</label> 
-        <label for="eleven" class="eleven">11</label>
-        <label for="twelve" class="twelve">12</label>           
-      </div>
- 
+        <div class="_12">
+          <label for="twelve">&#8743;</label>
+          <label for="eleven">&#8744;</label>
+          12
+        </div>
+        
+        <div class="_11">
+          <label for="twelve">&#8743;</label>
+          <label for="ten">&#8744;</label>
+          11
+        </div>
+
+        <div class="_10">
+          <label for="eleven">&#8743;</label>
+          <label for="nine">&#8744;</label>
+          10
+        </div>
+
+        <div class="_9">
+          <label for="ten">&#8743;</label>
+          <label for="eight">&#8744;</label>
+          9
+        </div>
+
+        <div class="_8">
+          <label for="nine">&#8743;</label>
+          <label for="seven">&#8744;</label>
+          8
+        </div>
+
+        <div class="_7">
+          <label for="eight">&#8743;</label>
+          <label for="six">&#8744;</label>
+          7
+        </div>
+
+        <div class="_6">
+          <label for="seven">&#8743;</label>
+          <label for="five">&#8744;</label>
+          6
+        </div>
+
+        <div class="_5">
+          <label for="six">&#8743;</label>
+          <label for="four">&#8744;</label>
+          5
+        </div>
+
+        <div class="_4">
+          <label for="five">&#8743;</label>
+          <label for="three">&#8744;</label>
+          4
+        </div>
+
+        <div class="_3">
+          <label for="four">&#8743;</label>
+          <label for="two">&#8744;</label>
+          3
+        </div>
+
+        <div class="_2">
+          <label for="three">&#8743;</label>
+          <label for="one">&#8744;</label>
+          2
+        </div>
+
+        <div class="_1">
+          <label for="two">&#8743;</label>
+          <label for="one">&#8744;</label>
+          1
+        </div>          
   
+      </div>  
 
       <div class="goal">
         <div class="phone"></div>
