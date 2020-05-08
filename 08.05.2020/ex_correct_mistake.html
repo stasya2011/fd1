@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #vault:checked~.wrapper>.currentVault>span:nth-of-type(2),
+        #vault:not(:checked)~.wrapper>.currentVault span:nth-of-type(1){
+            color: green;
+            border: 2px solid fuchsia;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+        }
+
+        .currentVault span{
+            display: none;
+        }
+
+        .currentVault{
+            position: relative;
+        }
+        .before::before{
+            content: "\2227";
+            display: block;
+            position: absolute;
+            left: 23px;
+            top: 0px;
+            color: fuchsia;
+            font-weight: 900;
+                    
+        }
+
+        .next::after{
+            content: "\2228";
+            display: block;
+            position: absolute;
+            left: 23px;
+            top: 35px;
+            color: fuchsia;
+            font-weight: 900;
+        }
+        [type="checkbox"]{
+            display: none;
+        }
+        .vaultLabel::before{
+            content:'RUB  ';          
+          background-color: lightseagreen;
+        }
+
+        #vault:checked~.wrapper .vaultLabel::before{
+            content:'USD  ';       
+          background-color: lightslategray;
+        }
+
+        .monthSwitch{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: olive;
+        }
+
+        .monthSwitch>div{
+            display: none;
+            position: relative;
+        }
+
+        #_12:checked~.wrapper ._12,
+        #_11:checked~.wrapper ._11,
+        #_10:checked~.wrapper ._10,
+        #_9:checked~.wrapper ._9,
+        #_8:checked~.wrapper ._8,
+        #_7:checked~.wrapper ._7,
+        #_6:checked~.wrapper ._6,
+        #_5:checked~.wrapper ._5,
+        #_4:checked~.wrapper ._4,
+        #_3:checked~.wrapper ._3,
+        #_2:checked~.wrapper ._2,
+        #_1:checked~.wrapper ._1 { /*при чекнутом #12 найди какой-ни #_12:checked~.wrapper ._12бубудь нижележащий враппер который является каким-нибудь родителем для _12*/
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            vertical-align: middle;
+            
+        }
+   
+        .monthSwitch > div > label {
+            position: absolute;
+            left: 7px;
+        }
+
+        .monthSwitch > div > label:nth-of-type(1) {
+            top: -20px;
+        }
+        .monthSwitch > div > label:nth-of-type(2) {
+            bottom: -20px;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="radio" id="_1" name="month" checked>
+    <input type="radio" id="_2" name="month">    
+    <input type="radio" id="_3" name="month">    
+    <input type="radio" id="_4" name="month">    
+    <input type="radio" id="_5" name="month">    
+    <input type="radio" id="_6" name="month">    
+    <input type="radio" id="_7" name="month">    
+    <input type="radio" id="_8" name="month">
+    <input type="radio" id="_9" name="month">    
+    <input type="radio" id="_10" name="month">    
+    <input type="radio" id="_11" name="month">    
+    <input type="radio" id="_12" name="month"> 
+
+        <!-- тип валюты  -->
+    <input type="checkbox" id="vault">
+    
+    <div class="wrapper">
+        <div class="currentVault">
+            <label for="vault" class="before"></label>
+            <label for="vault" class="next"></label>
+            <span>RUB</span>
+            <span>USD</span>
+        </div>
+
+
+        <!-- месяцы -->
+        <div class="monthLabel">
+            <!-- место для установки ячейки курса валют -->
+            <span class='vaultLabel'></span>через
+            <div class="monthSwitch">
+                <div class="_12">
+                    <label for="_12">&#8743;</label>
+                    <label for="_11">	&#8744;</label>
+                    12
+                </div>
+
+                <div class="_11">
+                    <label for="_12">&#8743;</label>
+                    <label for="_10">	&#8744;</label>
+                    11
+                </div>
+
+                <div class="_10">
+                    <label for="_11">&#8743;</label>
+                    <label for="_9">	&#8744;</label>
+                    10
+                </div>
+
+                <div class="_9">
+                    <label for="_10">&#8743;</label>
+                    <label for="_8">&#8744;</label>
+                    9
+                </div>
+
+                <div class="_8">
+                    <label for="_9">&#8743;</label>
+                    <label for="_7">&#8744;</label>
+                    8
+                </div>
+
+                <div class="_7">
+                    <label for="_8">&#8743;</label>
+                    <label for="_6">&#8744;</label>
+                    7
+                </div>
+
+                <div class="_6">
+                    <label for="_7">&#8743;</label>
+                    <label for="_5">&#8744;</label>
+                    6
+                </div>
+
+                <div class="_5">
+                    <label for="_6">&#8743;</label>
+                    <label for="_4">&#8744;</label>
+                    5
+                </div>
+
+                <div class="_4">
+                    <label for="_5">&#8743;</label>
+                    <label for="_3">&#8744;</label>
+                    4
+                </div>
+                <div class="_3">
+                    <label for="_4">&#8743;</label>
+                    <label for="_2">&#8744;</label>
+                    3
+                </div>
+                <div class="_2">
+                    <label for="_3">&#8743;</label>
+                    <label for="_1">&#8744;</label>
+                    2
+                </div>
+                <div class="_1">
+                    <label for="_2">&#8743;</label>
+                    <label for="_1">&#8744;</label>
+                    1
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
