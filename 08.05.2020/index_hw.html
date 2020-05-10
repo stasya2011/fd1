@@ -66,8 +66,6 @@ P {
     text-align: justify; /* Выравнивание по ширине */
     margin: 0;
    }
-
-
 @media screen and (max-width: 650px){
     ul{
     display: none;
@@ -89,7 +87,13 @@ P {
        line-height: 1.5em;
         vertical-align: middle;
         text-align: center;
-        display: inline-block;
+        display: inline-block;        
+    }
+    div:nth-of-type(1)>label:hover{
+        background-color: cornflowerblue;
+    }
+    div:nth-of-type(1)>label{
+        transition: background-color 1s 1s ease-in;
     }
 }
 
@@ -127,6 +131,16 @@ P {
     }
         #asideMenu:checked~.mainDiv{
         transform: translateX(0);
+    }
+
+    li:hover{
+        box-shadow: 0 0 0.4vw 0.1vw red;
+        text-shadow: 0 0 0.1vw rgb(219, 40, 79);
+        
+    }   
+
+    li{
+        transition: box-shadow 1s 1s, text-shadow 1s 1s;
     }
   
 } 
