@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inline{
+            display: inline-block;
+            transform: translate(-50%, 0px);
+            position: relative;
+            left:50%;
+            width: 150px;
+            height: 150px;
+            background-color: chartreuse;
+        } 
+        /* .block::before{
+            display: inline-block;
+            content: "";
+            transform: ;
+        } */
+        .block{
+            
+            width: 150px;
+            height: 150px;
+            background-color: cadetblue;
+            transition: all 1s ease 1s;
+            transform: translate3d(0px, 0px, 0px);
+            /* transform: scale(1, .5); */
+            margin: 250px;
+        
+           
+           
+            
+        }
+
+        .block:hover{
+            
+         transform: translate3d(20px, 30px, 50px);
+ 
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="block">1</div>
+    <!-- <span class="inline">2</span>
+   -->
+</body>
+</html>
