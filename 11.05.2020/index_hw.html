@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            /* position: absolute; */
+            font-size: 1.5vw;
+            background-color: green;
+        }
+
+        .wrapper{
+            padding-top: 2vh;
+            width: 35vw;
+            /* height: calc(100vh - 2vw); */
+            /* outline: 1px solid red; */
+            /* padding-left: 20vw; */
+            /* overflow: auto;
+            position: fixed; */
+            position: absolute;
+            left: calc(65vw / 2);
+           
+         
+            
+        }
+
+        .button{
+            
+            width: 18em;
+            height: 2.5em;
+            /* border: 1px solid black; */
+            background-color: rgb(204, 195, 195);
+            box-shadow: -5px 10px 20px 1px #000000;
+            border-radius: 5vw;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 2.5em;
+            font-weight: 900;
+        }
+
+       ul li{
+          list-style: none;
+          position: relative;          
+          /* outline: 1px solid red; */
+          height: 5vw;
+      
+       }
+       ul>li span{
+           display: inline-block;
+           position: relative;
+           left: -5vw;
+           width: 4vw;
+           height: 4vw;
+           border-radius: 50%;
+           border: 1px solid rgb(32, 102, 32);
+           box-shadow: 0 1.5vmin 1vmin 0;
+       }
+
+       ul>li h3{
+           color:yellow;
+           display: inline-block;
+           position: absolute;
+           top: -1vw;
+           left: 1vw;
+           font-size: 1em;
+        
+       }
+
+    </style>    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="button">
+            5 ПРИЧИН ПОЧЕМУ У НАС!
+        </div>
+        <ul>
+            <li class="_1"> 
+            <span class="list"></span>
+                <h3>НАМ ДОВЕРЯЮТ</h3>
+            
+            </li>
+
+            <li class="_2"> 
+                <span class="list"></span>
+                    <h3>БЕЗБОЛЕЗНЕННО И БЕЗОПАСНО</h3>
+                
+            </li>
+            <li class="_3"> 
+                <span class="list"></span>
+                    <h3>ИНДИВИДУАЛЬНЫЙ ПОДХОД</h3>
+                
+            </li>
+            <li class="_4"> 
+            <span class="list"></span>
+                <h3>ВРАЧИ</h3>
+            
+            </li>
+            <li class="_1"> 
+                <span class="list"></span>
+                    <h3>ОБОРУДОВАНИЕ</h3>
+                    Текст
+                </li>
+                
+        </ul>
+
+        <div class="button button_small">
+            Запишись на узи сейчас
+        </div>
+
+    </div>
+</body>
+</html>
