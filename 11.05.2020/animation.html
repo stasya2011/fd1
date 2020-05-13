@@ -8,7 +8,7 @@
         body{
             margin: 0 auto;
             background-color: black;
-            
+                    
         }
 
         .content{
@@ -16,57 +16,41 @@
         }
 
         .content__circul{
-            width: 100px;
-            height: 100px;
-            background-color: yellow;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            /* box-shadow: 0 50px 10px 4px grey; */
-
+            background: radial-gradient(circle at 60px 60px, #fce51b, #000);
+           
             /*начальное положение мяча*/
             position: relative;
             left: 10vmin;
-            bottom: -80vmin;
-            
-
-            animation-name: circle;
-           
-            animation-duration: 10s;
-         
+            bottom: -60vmin;      
+            animation-name: circle;           
+            animation-duration: 10s;         
             animation-iteration-count: infinite;
-            /* animation-direction: alternate; */
+            animation-direction:  alternate-reverse;
             /* animation-delay: 1s; */
             animation-timing-function: steps(20);
         }
 
-        /* .content:hover .content__circul{
-            animation-play-state: paused;
-        } */
-
-
-        .content>.content__circul .content__circul-sh{
-            width: 100px;
-            height: 100px;
+        /* .content__circul::before{
+            content: "";
+            display: inline-block;
             border-radius: 50%;
-            box-shadow: 0 100px 10px 4px grey;
-            animation-name: sh;
-            animation-duration: 10s;
-            
-        }
+            position: absolute;
+            top: 170px;          
+            width: 150px ;
+            height: 50px;
+            box-shadow: inset 0 0 20px 10px rgba(127, 131, 128, 0.5);
+        
+        }     */
+        
 
-        @keyframes sh{
-            0%{
-            transform: skew(-45deg, 10deg) translate(50px,0) scale(1, 0.5); 
-                       
-            }
-
-            100%{
-                transform: skew(-45deg);
-            }
-        }
+      
         /*сценарий движения мяча*/
         @keyframes circle{
             0%{
-            transform: translate(0, 0) scale(1, 1);
+            transform: translate(0, 0) scale(1, 1) scale(1.1, 1);           
             
             }
 
@@ -74,7 +58,7 @@
                 transform: translate(9vmin, -40vmin) scale(0.9, 1.1);
             }
             10%{
-                transform: translate(10vmin, -42vmin) scale(0.9, 1.2);
+                transform: translate(10vmin, -42vmin) scale(0.9, 1.1);
             }
 
             12%{
@@ -82,21 +66,21 @@
             }
 
             20%{
-                transform: translate(20vmin, 0);
+                transform: translate(20vmin, 0) scale(1.1, 1);               
             }
 
 
 
             
             21%{
-                transform: translate(20vmin, 0);
+                transform: translate(20vmin, 0) scale(1.1, 1);
             }
 
             28%{
                 transform: translate(29vmin, -40vmin) scale(0.9, 1.1);
             }
             30%{
-                transform: translate(30vmin, -42vmin) scale(0.9, 1.2);
+                transform: translate(30vmin, -42vmin) scale(0.9, 1.1);
             }
 
             32%{
@@ -104,19 +88,19 @@
             }
 
             40%{
-                transform: translate(40vmin, 0);
+                transform: translate(40vmin, 0) scale(1.1, 1);
             }
 
 
             41%{
-                transform: translate(40vmin, 0);
+                transform: translate(40vmin, 0) scale(1.1, 1);
             }
 
             48%{
                 transform: translate(49vmin, -40vmin) scale(0.9, 1.1);
             }
             50%{
-                transform: translate(50vmin, -42vmin) scale(0.9, 1.2);
+                transform: translate(50vmin, -42vmin) scale(0.9, 1.1);
             }
 
             52%{
@@ -124,13 +108,13 @@
             }
 
             60%{
-                transform: translate(60vmin, 0);
+                transform: translate(60vmin, 0) scale(1.1, 1);
             }
 
 
 
             61%{
-                transform: translate(60vmin, 0);
+                transform: translate(60vmin, 0) scale(1.1, 1);
             }
 
             68%{
@@ -145,12 +129,12 @@
             }
 
             80%{
-                transform: translate(80vmin, 0);
+                transform: translate(80vmin, 0) scale(1.1, 1); 
             }
 
 
             81%{
-                transform: translate(80vmin, 0);
+                transform: translate(80vmin, 0) scale(1.1, 1);
             }
 
             88%{
@@ -165,7 +149,7 @@
             }
 
             100%{
-                transform: translate(100vmin, 0);
+                transform: translate(100vmin, 0) scale(1.1, 1);
             }
 
                
@@ -177,7 +161,8 @@
 <body>
     
     <div class="content"> 
-        <div class="content__circul"><div class="content__circul-sh"></div></div>
+        <div class="content__circul"></div>
+        <!-- <div class="circul-shadow"></div> -->
     </div>
 </body>
 </html>
