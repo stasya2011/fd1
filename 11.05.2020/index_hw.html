@@ -6,50 +6,65 @@
     <title>Document</title>
     <style>
         body{
-            margin: 0;
-            /* position: absolute; */
-            font-size: 1.5vw;
-            background-color: green;
+            margin: 0;       
+            font-size: 1.1em;          
         }
 
         .wrapper{
-            padding-top: 2vh;
-            width: 35vw;
-            /* height: calc(100vh - 2vw); */
-            /* outline: 1px solid red; */
-            /* padding-left: 20vw; */
-            /* overflow: auto;
-            position: fixed; *
-            position: absolute;
-            left: calc(65vw / 2);
-           
-         
+            
+            width: 100vw;
+            height: 100vh;         
+            overflow: auto;
+            position: fixed;
+            padding-left: 50vmin; 
+            padding-top: 5vw;   
+            background: linear-gradient(to right, green 0%, green 50%,yellow 50%, yellow 100%)
+                    
+        }
+        
+        ul>li span:hover{
+            background-color: wheat;
+            transform: translate(-2vw);
+        }
+        ul>li span:hover+h3{
+            color: whitesmoke;
+        }
+        .button_lage{
+            width: 90vmin;           
+            text-shadow: 5px 5px 9px;
+            font-size: 2vw;
             
         }
-
+        .button_small{
+           width: 20vw;
+           position: relative;
+           left: 10vw;
+           margin-top: 2vw;
+       }
         .button{
-            
-            width: 18em;
-            height: 2.5em;
-            /* border: 1px solid black; */
+            height: 10vmin;
             background-color: rgb(204, 195, 195);
             box-shadow: -5px 10px 20px 1px #000000;
             border-radius: 5vw;
             display: inline-block;
             vertical-align: middle;
             text-align: center;
-            line-height: 2.5em;
+            line-height: 10vmin;
             font-weight: 900;
+            perspective: 5vw;
+            transition: all 1s ease-in;
         }
 
        ul li{
+        width: 100vw;
           list-style: none;
-          position: relative;          
-          /* outline: 1px solid red; */
-          height: 5vw;
-      
+          position: relative;
+          height: 4vw; 
+          margin-bottom:1vw;
+          padding-top:0;
+               
        }
-       ul>li span{
+       ul>li span{  
            display: inline-block;
            position: relative;
            left: -5vw;
@@ -58,23 +73,76 @@
            border-radius: 50%;
            border: 1px solid rgb(32, 102, 32);
            box-shadow: 0 1.5vmin 1vmin 0;
+           transition: all 1s ease-in; 
+
        }
 
        ul>li h3{
            color:yellow;
-           display: inline-block;
            position: absolute;
            top: -1vw;
-           left: 1vw;
-           font-size: 1em;
+           left: 1vw; 
+           transition: 1s ease-in ;             
         
        }
+
+       /* ul>li p{
+           outline: 1px solid fuchsia;
+           overflow: hidden;
+           display: inline-block;
+           width: 25vw;
+           height: 1.5vw;
+           margin-top: 0;
+           position: relative;
+           top: 4vmin;
+           left: -8vmin;
+       } */
+
+       .button:hover{
+           transform: scale3d(1.3, 1.3, 1);
+           background-color: rgba(12, 179, 81, 0.308);
+           }
+
+       
+
+        @media screen and (max-width: 500px) {
+            .wrapper{
+               background: linear-gradient(to bottom, green 0%, green 70%,yellow 70%, yellow 100%);  
+               padding-left: 12vw;
+            }
+            ul li{
+                padding-bottom: 5vw; 
+                             
+            }
+           ul>li span{
+               width: 7vw;
+               height: 7vw;                
+            }
+            ul>li h3{
+                top: 0vw;
+                left: 6vw;
+                font-size: 1em;
+            }
+
+            
+            .button_lage{
+                display: none;
+            }
+            .button_small{
+                position: absolute;
+                width: 45vw;
+                font-size: 0.7em;
+                left: 25vw;
+                bottom: 10vw;
+                transform: scale(1.5);
+            }
+        }  
 
     </style>    
 </head>
 <body>
     <div class="wrapper">
-        <div class="button">
+        <div class="button button_lage">
             5 ПРИЧИН ПОЧЕМУ У НАС!
         </div>
         <ul>
@@ -102,13 +170,15 @@
             <li class="_1"> 
                 <span class="list"></span>
                     <h3>ОБОРУДОВАНИЕ</h3>
-                    Текст
+                    <!-- <p>
+                    Текст текст текст текст текст тексттексттексттексттексттексттексттексттексттексттексттексттексттекст
+                    </p> -->
                 </li>
                 
         </ul>
 
         <div class="button button_small">
-            Запишись на узи сейчас
+            ЗАПИШИСЬ НА УЗИ СЕЙЧАС
         </div>
 
     </div>
