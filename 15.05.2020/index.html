@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+      header{
+         
+          height: 80px;
+          background: darkgoldenrod;
+      }
+
+      footer{
+          height: 180px;
+          background-color: darkgrey;
+      }
+
+      main{
+        display: flex;
+      }
+      nav{
+          background-color: darkslategray;
+          min-width: 200px;
+          
+      }
+
+    aside{
+          background-color: darkslategray;
+         flex-basis: 100px;
+      }
+
+      article{
+          background-color: forestgreen;
+          flex-grow: 1; /*может расти*/
+      }
+
+      li:hover{
+          background-color: fuchsia;
+
+      }
+      @media screen and (max-width: 500px){
+        main{
+            flex-direction: column;
+        }
+
+        article{
+            order: 1;
+        }
+        aside{
+            order: 3
+        }
+        nav{
+            order: 2;
+        }
+
+      }
+
+      @media screen and (min-width: 1000px) {
+          nav{
+              min-width: 100%;
+          }
+          main{
+              flex-wrap: wrap;
+          }
+          aside{
+              flex-basis: 20%;
+          }
+          article{
+              flex-basis: 80%;
+          }
+
+          nav>ul{
+            display: flex;
+            list-style-type: none;
+            justify-content: space-around;
+            padding-inline-start: 0;
+          }
+
+          nav>ul>li{
+              flex-grow: 1;
+              text-align: center;
+          }
+
+      }
+    </style>
+</head>
+<body>
+  
+        <header></header>
+        <main>
+            <nav>
+                <ul>
+                    <li><a href="#">Какой-то пункт 001</a></li>
+                    <li><a href="#">Какой-то пункт 002</a></li>
+                    <li><a href="#">Какой-то пункт 003</a></li>
+                    <li><a href="#">Какой-то пункт 004</a></li>
+                </ul>
+
+            </nav>
+            <article> <h2>Интересная статья</h2>
+                <p>
+                    text text text text text text text text text text text text text text text text text
+                    text text text text text text text text text text text text text text text text text
+                    text text text text text text text text text text text text text text text text text
+                </p>
+ </article>
+            <aside>aside
+                <div>Реклама</div>
+            </aside>
+        </main>
+        <footer></footer>
+
+
+</body>
+</html>
