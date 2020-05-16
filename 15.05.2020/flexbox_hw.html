@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .wrapper {
+            width: 90vw;
+            margin: 0 auto;
+            /* height: 100vh; */
+            font-size: 1.2vw;
+        }
+
+        /* common properties*/
+        header>div,
+        main>aside>div,
+        footer>div {
+            background-color: #2f493b;
+            overflow: hidden;
+            color: cornflowerblue;
+        }
+
+        /*header*/
+        header {
+            height: 15vh;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header>div:nth-of-type(1) {
+            flex-basis: 10%;
+        }
+
+        header>div:nth-of-type(2) {
+            flex-grow: 1;
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        header>div:nth-of-type(3) {
+            flex-grow: 2;
+        }
+
+
+        /*  hr  */
+        .wrapper hr,
+        main hr {
+            border: 1px solid black;
+            margin: 1vw;
+
+        }
+
+        main hr {
+            width: 100%
+        }
+
+
+
+
+        /*  common properties */
+        main>article>div,
+        main>article>ul li {
+            color: navy;
+            background-color: rgb(170, 164, 170);
+            overflow: hidden;
+
+        }
+
+
+        /*  main aside  */
+        main {
+            width: 100%;
+            height: 60vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        aside {
+            width: 15%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+
+        aside>div:nth-of-type(1) {
+            height: 30vh;
+
+        }
+
+        aside>div:nth-of-type(2) {
+            height: 15vh;
+        }
+
+
+
+        /*  main article  */
+        main>article {
+            width: 83%;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        main>article>div:nth-of-type(1) {
+            width: 100%;
+            height: 15vh;
+        }
+
+        main>article ul {
+            width: 100%;
+            height: 28vh;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-content: space-around;
+            padding: 0;
+            margin: 0;
+        }
+
+        main>article>ul li {
+            list-style-type: none;
+            width: 14vw;
+            height: 11vh;
+            background-color: rgb(170, 164, 170);
+
+        }
+
+        /*Каким образом перенести элемент*/
+        main>article>ul li:nth-of-type(7) {
+            background-color: red;
+        }
+
+        main>article>div:nth-of-type(2),
+        main>article>div:nth-of-type(3) {
+            background-color: rgb(170, 164, 170);
+            width: 49%;
+            height: 15vh;
+
+        }
+
+
+
+        /*  footer  */
+
+        footer {
+            margin-top: 1vw;
+            height: 20vh;            
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+        }
+
+        footer>div {
+            width: 32%;          
+          
+        }
+
+        footer>div:nth-of-type(3),
+        footer>div:nth-of-type(4) {
+            height: 9vh;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </header>
+        <hr>
+        <main>
+            <aside>
+                <div>4
+                    <br>
+                    CSS flexbox (Flexible Box Layout Module) — модуль макета гибкого контейнера —
+                    представляет собой способ компоновки элементов, в основе лежит идея оси.
+                </div>
+                <div>7
+                    <br>
+
+                </div>
+            </aside>
+            <article>
+                <div>5
+                    <br>
+
+                </div>
+                <ul>
+                    <li>6</li>
+                    <li>6</li>
+                    <li>6</li>
+                    <li>6</li>
+                    <li>6</li>
+                    <li>6</li>
+                    <li>6</li>
+                </ul>
+
+                <div>8
+                    <br>
+                    Flexbox состоит из гибкого контейнера (flex container) и гибких элементов (flex items).
+                    Гибкие элементы могут выстраиваться в строку или столбик, а оставшееся свободное пространство
+                    распределяется между ними различными способами.
+                </div>
+                <div>9
+                    <br>
+                    Flexbox решает специфические задачи
+                    — создание одномерных макетов, например, навигационной панели, так как flex-элементы можно размещать
+                    только по одной из осей.
+                </div>
+
+            </article>
+            <hr>
+        </main>
+
+        <footer>
+            <div>10
+                <ul>
+                    <li>Пункт списка 1</li>
+                    <li>Пункт списка 1</li>
+                    <li>Пункт списка 1</li>
+                    <li>Пункт списка 1</li>
+                    
+                </ul>
+            </div>
+            <div>11
+               
+                <ul>
+                    <li>Пункт списка 1</li>
+                    <li>Пункт списка 1</li>
+                    <li>Пункт списка 1</li>
+                    <li>Пункт списка 1</li>
+                   
+                </ul>
+            </div>
+            <div>12</div>
+            <div>13</div>
+        </footer>
+    </div>
+</body>
+
+</html>
