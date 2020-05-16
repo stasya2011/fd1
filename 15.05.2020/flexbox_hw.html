@@ -52,7 +52,8 @@
         }
 
         main hr {
-            width: 100%
+            width: 100%;
+            height: 0;
         }
 
         /*  common properties */
@@ -287,8 +288,7 @@
             main {
                 width: 100vw;
                 flex-direction: column;
-                flex-wrap: wrap;
-                /* justify-content: space-between;  */
+                flex-wrap: wrap;               
                 height: auto;
                 align-content: space-between;
 
@@ -350,6 +350,65 @@
             }
 
         }
+
+@media screen and (min-width: 1201px){
+    .wrapper{
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    header{
+        height: 100px;
+    }
+
+    main{
+        height: 650px;
+    }
+
+    main>aside{
+        width: 200px;
+    }
+
+    main>article{
+        width:  780px;
+      
+    }
+
+    main>article>div:nth-of-type(1){
+        height: 150px;
+        background-color: goldenrod;
+        margin-bottom: 10px;
+    }
+
+    main>article ul{
+        height: 330px;
+    }
+
+    main>article>ul>li{
+        width: 150px;
+        height:150px;
+    }
+
+    main hr{
+        height: 0;
+       
+    }
+
+    footer{
+        height: 100px;
+        
+    }
+
+    footer>div{
+        width: 320px;
+    }
+
+    footer>div:nth-of-type(3),
+    footer>div:nth-of-type(4){
+        height: 40px;
+    }
+
+}
     </style>
 </head>
 
