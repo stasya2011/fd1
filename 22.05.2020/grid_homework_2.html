@@ -7,11 +7,12 @@
     <title>Document</title>
     <style>
         body {
-            height: 100vh;
+            height: calc(100vh - 16px);
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 90vw;
             grid-template-rows: 10vh 2vh 1fr 2vh 15vh;
-            margin: 0;
+            margin-left: 0;
+            margin-right: 0;
         }
 
         /*линия*/
@@ -239,6 +240,14 @@
             margin: 0;        
         }
 }
+@media screen and (min-width: 1000px) {
+            body {
+              
+                grid-template-columns: 1000px;
+                justify-content: center;
+            }
+        }
+
      
     </style>
 </head>
