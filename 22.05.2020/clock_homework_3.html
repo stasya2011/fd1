@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .wrapper{
+        body {
+            margin-left: calc(50% - 10vw);
+        }
+
+        /*циферблат*/
+        .wrapper {
             display: block;
             width: 30vw;
             height: 30vw;
             border: 10px solid black;
             border-radius: 50%;
             position: relative;
-            }
+            margin: 5vh;
 
-        .arrow{
+        }
+
+        .arrow {
             position: absolute;
             width: 10px;
             height: calc(30vw / 2 - 10px);
@@ -24,28 +32,136 @@
             top: 0;
             left: calc(50% - 5px);
 
-            animation: clock 60s linear infinite reverse;
+            animation-play-state: paused;
+
             transform-origin: bottom left;
         }
 
-         @keyframes clock {
-          
-            from{
-                transform:rotate(360deg)
+        @keyframes clock {
+            from {
+                transform: rotate(0deg)
             }
-   } 
-            /* #button:checked ~ .wrapper>.arrow{
-            animation: clock 60s linear infinite reverse;
-        }  */
 
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        #start:checked~.wrapper>.arrow {
+            animation-play-state: running;
+        }
+
+
+        /*секундомер*/
+        input {
+            display: none;
+        }
+
+        .wrapperTime>.clock {
+            width: 210px;
+            height: 40px;
+            font-size: 3em;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .clock>.time {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            vertical-align: middle;
+            line-height: 40px;
+            top: 0;
+            animation-play-state: paused;
+
+        }
+
+        .min_1 {
+            left: 5%;
+            animation: minutes 3600s steps(6, end) infinite;
+
+        }
+
+        .min_2 {
+            left: 20%;
+            animation: seconds 600s steps(10, end) infinite;
+        }
+
+        .seconds_1 {
+            left: 50%;
+            animation: minutes 60s steps(6, end) infinite;
+        }
+
+        .seconds_2 {
+            left: 70%;
+            animation: seconds 10s steps(10, end) infinite;
+
+        }
+
+        @keyframes minutes {
+            to {
+                top: -240px;
+                /*40px * 6*/
+            }
+
+            from {
+                top: 0%;
+            }
+        }
+
+        @keyframes seconds {
+            to {
+                top: -400px;
+                /*10 * 40px*/
+            }
+
+            from {
+                top: 0%;
+            }
+        }
+
+        .wrapperTime>.clock>#start:checked~.time,
+        .wrapperTime>.clock>#start:checked~.arrow {
+            animation-play-state: running;
+        }
+
+        .wrapperTime>.clock>#stop:checked~.time {
+            animation-play-state: paused;
+        }
+
+        .wrapperTime>.clock>#reset:checked~.time {
+            animation: none;
+        }
     </style>
 </head>
+
 <body>
+    <!-- циферблат -->
     <div class="wrapper">
-       
         <div class="arrow"></div>
     </div>
-    <!-- <input type="radio" id="button">
-    <label for="button" сlass="start">STАRT</label> -->
+    <!-- 
+    /*секундомер*/ -->
+    <div class="wrapperTime">
+        <div class="clock">
+            <input type="radio" name="clock" id="start">
+            <input type="radio" name="clock" id="stop">
+            <input type="radio" name="clock" id="reset">
+
+            <div class="time min_1">0 1 2 3 4 5 6</div>
+            <div class="time min_2">0 1 2 3 4 5 6 7 8 9</div>
+            <div class="time seconds_1">0 1 2 3 4 5 6</div>
+            <div class="time seconds_2">0 1 2 3 4 5 6 7 8 9</div>
+
+        </div>
+
+        <div>
+            <label for="start">start</label>
+            <label for="stop">stop</label>
+            <label for="reset">reset</label>
+        </div>
+    </div>
+
 </body>
+
 </html>
