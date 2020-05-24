@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #slider>section>img{
+            width: 20vw;
+            height: 20vw;
+          
+        }
+    
+        #slider section{
+            display: none;
+        }
+
+        #one:checked ~ #slider>.slider__one,
+        #two:checked ~ #slider>.slider__two,
+        #three:checked ~ #slider>.slider__three,
+        #four:checked ~ #slider>.slider__four,
+        #five:checked ~ #slider>.slider__five{
+            display: inline-block;
+            position: absolute;
+ 
+        
+        }
+
+      #slider>section .slider_prev::before,
+      #slider>section .slider_next::after{
+          content: "";
+          display: inline-block;
+          border: 10px solid red;
+          position: absolute;
+          border-top-color: transparent;
+          border-bottom-color: transparent;          
+          top: calc(50% - 10px);
+          }
+        
+
+      #slider>section .slider_prev::before{
+          left: 0;
+          border-left-color: transparent;                    
+      }
+
+      #slider>section .slider_next::after{
+          right: 0;
+          border-right-color: transparent;         
+      }
+      
+      input{
+          display: none;
+      }
+        
+    </style>
+</head>
+<body>
+    <input type="radio" id="one" name="dartSlider" checked>
+    <input type="radio" id="two" name="dartSlider">
+    <input type="radio" id="three" name="dartSlider">
+    <input type="radio" id="four" name="dartSlider">
+    <input type="radio" id="five" name="dartSlider">
+    <div id="slider">
+       <!-- блок -->
+         <section class="slider__one"> 
+            <img src="https://vk.vkfaces.com/604829/v604829812/21e0e/jCxnyhu09r4.jpg">
+              <!-- блок__элемент -->
+            <label for="five" class="slider_prev"></label>
+            <label for="two" class="slider_next"></label>
+        </section>
+        <section class="slider__two">
+            <img src="https://pp.userapi.com/c837625/v837625883/1f184/PkpPLNNBr2U.jpg">
+            <label for="one" class="slider_prev"></label>
+            <label for="three" class="slider_next"></label>
+        </section>
+        <section class="slider__three">
+            <img src="http://i.playground.ru/i/95/33/40/20/user/avatar.jpg?v1">
+            <label for="two" class="slider_prev"></label>
+            <label for="four" class="slider_next"></label>
+        </section>
+        <section class="slider__four">
+            <img src="https://pp.userapi.com/c630323/v630323161/20bb3/T3Az9-vrmR4.jpg">
+            <label for="three" class="slider_prev"></label>
+            <label for="five" class="slider_next"></label>
+        </section>
+        <section class="slider__five">
+            <img src="https://pp.userapi.com/c630520/v630520889/4664/wtEVyP_teoA.jpg">
+            <label for="four" class="slider_prev"></label>
+            <label for="one" class="slider_next"></label>
+        </section>
+        <div class="label">
+            <label for="one"></label>
+            <label for="two"></label>
+            <label for="three"></label>
+            <label for="four"></label>
+            <label for="five"></label>
+        </div>
+    </div>
+</body>
+</html>
