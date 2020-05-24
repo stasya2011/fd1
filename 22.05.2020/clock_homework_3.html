@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
+        body{
             margin-left: calc(50% - 10vw);
         }
-
         /*циферблат*/
-        .wrapper {
+      .wrapper{
             display: block;
             width: 30vw;
             height: 30vw;
@@ -19,10 +18,10 @@
             border-radius: 50%;
             position: relative;
             margin: 5vh;
+           
+            }
 
-        }
-
-        .arrow {
+        .arrow{
             position: absolute;
             width: 10px;
             height: calc(30vw / 2 - 10px);
@@ -33,105 +32,100 @@
             left: calc(50% - 5px);
 
             animation-play-state: paused;
-
+            animation: clock 60s steps(60, end) infinite;            
             transform-origin: bottom left;
-        }
+        } 
 
-        @keyframes clock {
+      @keyframes clock {
             from {
-                transform: rotate(0deg)
+                transform:rotate(0deg)
+            }         
+            to{
+                transform:rotate(360deg)
             }
+   } 
+   
+  #start:checked ~ .wrapper>.arrow{
+      animation-play-state: running;
+  }
 
-            to {
-                transform: rotate(360deg)
-            }
+
+  /*секундомер*/
+    input{
+        display: none;
+    }
+
+    .wrapperTime>.clock{
+        width: 210px;
+        height: 40px;
+        font-size: 3em;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .clock>.time{
+        position: absolute;
+        width: 30px;
+        height: 40px; 
+        vertical-align: middle;
+        line-height: 40px;   
+        top:0;
+        animation-play-state: paused;
+    
+    }
+    
+    .min_1{
+        left:5%;
+        animation: minutes 3600s steps(6, end) infinite; 
+
+    }
+
+    .min_2{
+        left:20%;
+        animation: seconds 600s steps(10, end) infinite;         
+    }
+
+    .seconds_1{
+        left:50%;
+        animation: minutes 60s steps(6, end) infinite; 
+    }
+
+    .seconds_2{
+        left:70%;
+        animation: seconds 10s steps(10, end) infinite;
+        
+    }
+    
+    @keyframes minutes {
+        to{
+            top: -240px; /*40px * 6*/
         }
-
-        #start:checked~.wrapper>.arrow {
-            animation-play-state: running;
+        from{
+            top: 0%;
         }
+    }
 
-
-        /*секундомер*/
-        input {
-            display: none;
+    @keyframes seconds{
+        to{
+            top: -400px; /*10 * 40px*/
         }
-
-        .wrapperTime>.clock {
-            width: 210px;
-            height: 40px;
-            font-size: 3em;
-            overflow: hidden;
-            position: relative;
+        from{
+            top:0%;
         }
+    }
+    
+    .wrapperTime>.clock>#start:checked ~ .time,
+    .wrapperTime>.clock>#start:checked ~ .arrow{
+        animation-play-state: running;
+    }
 
-        .clock>.time {
-            position: absolute;
-            width: 30px;
-            height: 40px;
-            vertical-align: middle;
-            line-height: 40px;
-            top: 0;
-            animation-play-state: paused;
+    .wrapperTime>.clock>#stop:checked ~ .time{
+        animation-play-state: paused;
+    }
 
-        }
-
-        .min_1 {
-            left: 5%;
-            animation: minutes 3600s steps(6, end) infinite;
-
-        }
-
-        .min_2 {
-            left: 20%;
-            animation: seconds 600s steps(10, end) infinite;
-        }
-
-        .seconds_1 {
-            left: 50%;
-            animation: minutes 60s steps(6, end) infinite;
-        }
-
-        .seconds_2 {
-            left: 70%;
-            animation: seconds 10s steps(10, end) infinite;
-
-        }
-
-        @keyframes minutes {
-            to {
-                top: -240px;
-                /*40px * 6*/
-            }
-
-            from {
-                top: 0%;
-            }
-        }
-
-        @keyframes seconds {
-            to {
-                top: -400px;
-                /*10 * 40px*/
-            }
-
-            from {
-                top: 0%;
-            }
-        }
-
-        .wrapperTime>.clock>#start:checked~.time,
-        .wrapperTime>.clock>#start:checked~.arrow {
-            animation-play-state: running;
-        }
-
-        .wrapperTime>.clock>#stop:checked~.time {
-            animation-play-state: paused;
-        }
-
-        .wrapperTime>.clock>#reset:checked~.time {
-            animation: none;
-        }
+    .wrapperTime>.clock>#reset:checked ~ .time{
+        animation: none;
+    }
     </style>
 </head>
 
@@ -140,7 +134,7 @@
     <div class="wrapper">
         <div class="arrow"></div>
     </div>
-    <!-- 
+<!-- 
     /*секундомер*/ -->
     <div class="wrapperTime">
         <div class="clock">
@@ -161,7 +155,7 @@
             <label for="reset">reset</label>
         </div>
     </div>
-
+   
 </body>
 
 </html>
