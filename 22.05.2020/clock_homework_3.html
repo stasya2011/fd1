@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            display: block;
+            width: 30vw;
+            height: 30vw;
+            border: 10px solid black;
+            border-radius: 50%;
+            position: relative;
+            }
+
+        .arrow{
+            position: absolute;
+            width: 10px;
+            height: calc(30vw / 2 - 10px);
+            background-color: blue;
+
+            /*позиция*/
+            top: 0;
+            left: calc(50% - 5px);
+
+            animation: clock 60s linear infinite reverse;
+            transform-origin: bottom left;
+        }
+
+         @keyframes clock {
+          
+            from{
+                transform:rotate(360deg)
+            }
+   } 
+            /* #button:checked ~ .wrapper>.arrow{
+            animation: clock 60s linear infinite reverse;
+        }  */
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+       
+        <div class="arrow"></div>
+    </div>
+    <!-- <input type="radio" id="button">
+    <label for="button" сlass="start">STАRT</label> -->
+</body>
+</html>
