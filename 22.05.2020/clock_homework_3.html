@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             margin-left: calc(50% - 10vw);
         }
+
         /*циферблат*/
-      .wrapper{
+        .wrapper {
             display: block;
             width: 30vw;
             height: 30vw;
@@ -18,144 +19,184 @@
             border-radius: 50%;
             position: relative;
             margin: 5vh;
-           
-            }
+            box-shadow: 0 0 3vw 0 black;
+            background: radial-gradient(rgba(231, 231, 19,1) 0,rgb(231, 231, 19) 5%, rgb(28, 209, 98) 20%,rgb(37, 168, 48) 40%, rgb(44, 133, 51) 60%, rgb(9, 224, 9) );
+        }
+        
+        i{
+            display: inline-block;
+            border: 1px solid black;
+            width: 0;
+            height: 2vw;
+            position: absolute;
+            
+        }
 
-        .arrow{
+        i:nth-of-type(1){                   
+            top: 0;
+            left: 50%
+        }
+
+        i:nth-of-type(2){
+            bottom: 0;
+            left: 50%
+        }
+
+        i:nth-of-type(3){
+            bottom: calc(50% - 10px);
+            left: 9px;
+            transform: rotate(-90deg);
+        }
+
+        i:nth-of-type(4){
+            bottom: calc(50% - 10px);
+            right: 9px;
+            transform: rotate(90deg);
+        }
+
+        i:nth-of-type(5){
+            top: 7%;
+            right: 7vw;
+            transform: rotate(45deg);
+           
+        }
+
+        i:nth-of-type(6){
+            bottom: 7%;
+            right: 7vw;
+            transform: rotate(-215deg);
+           
+        }
+       
+        /* .wrapper::after{
+            content: "1 2 3 4 5 6 7 8 9";
+            position: absolute;
+            top: -10px;
+            outline: 1px solid red;;
+            display: inline-block;
+            width: 10vw;
+            height: 10vw;
+            transform: rotate(30deg);
+        }  */
+
+        .arrow {
             position: absolute;
             width: 10px;
             height: calc(30vw / 2 - 10px);
             background-color: blue;
-
             /*позиция*/
             top: 0;
             left: calc(50% - 5px);
 
             animation-play-state: paused;
-            animation: clock 60s steps(60, end) infinite;            
+            animation: clock 60s steps(60, end) infinite;
             transform-origin: bottom left;
-        } 
+        }
 
-      @keyframes clock {
+        @keyframes clock {
             from {
-                transform:rotate(0deg)
-            }         
-            to{
-                transform:rotate(360deg)
+                transform: rotate(0deg)
             }
-   } 
-   
-  #start:checked ~ .wrapper>.arrow{
-      animation-play-state: running;
-  }
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        #start:checked~.wrapper>.arrow {
+            animation-play-state: running;
+        }
 
 
-  /*секундомер*/
-    input{
-        display: none;
-    }
+        /*секундомер*/
+        input {
+            display: none;
+        }
 
-    .wrapperTime>.clock{
-        width: 210px;
-        height: 40px;
-        font-size: 3em;
-        overflow: hidden;
-        position: relative;
-    }
+        .wrapperTime>.clock {
+            width: 210px;
+            height: 40px;
+            font-size: 3em;
+            overflow: hidden;
+            position: relative;
+        }
 
-    .clock>.time{
-        position: absolute;
-        width: 30px;
-        height: 40px; 
-        vertical-align: middle;
-        line-height: 40px;   
-        top:0;
-        animation-play-state: paused;
-    
-    }
-    
-    .min_1{
-        left:5%;
-        animation: minutes 3600s steps(6, end) infinite; 
+        .clock>.time {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            vertical-align: middle;
+            line-height: 40px;
+            top: 0;
+        }
 
-    }
+        .min_1 {
+            left: 5%;
+            animation: minutes 3600s steps(6, end) infinite;
+        }
 
-    .min_2{
-        left:20%;
-        animation: seconds 600s steps(10, end) infinite;         
-    }
+        .min_2 {
+            left: 20%;
+            animation: seconds 600s steps(10, end) infinite;
+        }
 
-    .seconds_1{
-        left:50%;
-        animation: minutes 60s steps(6, end) infinite; 
-    }
+        .seconds_1 {
+            left: 50%;
+            animation: minutes 60s steps(6, end) infinite;
+        }
 
-    .seconds_2{
-        left:70%;
-        animation: seconds 10s steps(10, end) infinite;
+        .seconds_2 {
+            left: 70%;
+            animation: seconds 10s steps(10, end) infinite;
+
+        }
+
+
         
-    }
-    
-    @keyframes minutes {
-        to{
-            top: -240px; /*40px * 6*/
-        }
-        from{
-            top: 0%;
-        }
-    }
 
-    @keyframes seconds{
-        to{
-            top: -400px; /*10 * 40px*/
+        @keyframes minutes {
+            to {
+                top: -240px;
+                /*40px * 6*/
+            }
+            from {
+                top: 0%;
+            }
         }
-        from{
-            top:0%;
+
+        @keyframes seconds {
+            to {
+                top: -400px;
+                /*10 * 40px*/
+            }
+            from {
+                top: 0%;
+            }
         }
-    }
-    
-    .wrapperTime>.clock>#start:checked ~ .time,
-    .wrapperTime>.clock>#start:checked ~ .arrow{
-        animation-play-state: running;
-    }
-
-    .wrapperTime>.clock>#stop:checked ~ .time{
-        animation-play-state: paused;
-    }
-
-    .wrapperTime>.clock>#reset:checked ~ .time{
-        animation: none;
-    }
     </style>
 </head>
 
 <body>
-    <!-- циферблат -->
+    <!--  циферблат  -->
     <div class="wrapper">
+       <i>60</i>
+       <i>30</i>
+       <i>45</i>
+       <i>15</i>
+       <i>5</i>
+       <i>25</i>
+       <i>10</i>
+       <i>15</i>
         <div class="arrow"></div>
     </div>
-<!-- 
-    /*секундомер*/ -->
+    <!--  секундомер  -->
     <div class="wrapperTime">
         <div class="clock">
-            <input type="radio" name="clock" id="start">
-            <input type="radio" name="clock" id="stop">
-            <input type="radio" name="clock" id="reset">
-
             <div class="time min_1">0 1 2 3 4 5 6</div>
             <div class="time min_2">0 1 2 3 4 5 6 7 8 9</div>
             <div class="time seconds_1">0 1 2 3 4 5 6</div>
             <div class="time seconds_2">0 1 2 3 4 5 6 7 8 9</div>
-
         </div>
 
-        <div>
-            <label for="start">start</label>
-            <label for="stop">stop</label>
-            <label for="reset">reset</label>
-        </div>
-    </div>
-   
 </body>
 
 </html>
