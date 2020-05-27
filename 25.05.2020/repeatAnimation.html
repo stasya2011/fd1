@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:nth-of-type(1){
+            background: url('sheet.jpg');
+            width: calc(462px / 7);
+            height: 135px;
+            background-repeat: no-repeat;
+             animation: anim 1s steps(6) infinite alternate;
+             animation-play-state: paused;
+           
+        }
+
+        div:nth-of-type(1):hover{
+            animation-play-state: running;
+        }
+
+
+        @keyframes anim {
+            to{
+               background-position: 0 0;
+            }
+            from{
+                background-position: -396px 0;
+            }
+        }
+
+
+
+
+        div:nth-of-type(2){
+            background: url('sprite-marsch.png');
+            width: 100px;
+            height: 20vw;
+            background-repeat: no-repeat;
+
+            animation: anim2 1s steps(6) infinite reverse;
+             /* animation-play-state: paused; */
+        }
+
+        @keyframes anim2 {
+            to{
+               background-position: 0 0;
+               /* transform: translateX(0); */
+            }
+          
+            from{
+                background-position: -560px 0;
+                /* transform: translateX(560px); */
+            }
+        }
+
+     
+        div:nth-of-type(2):hover{
+            animation-play-state: paused;
+        } 
+
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+</body>
+</html>
