@@ -1,0 +1,55 @@
+$navItems: 10;
+$navItemsWidth:100px;
+$navItemsHeight: 100px;
+$navItemsRad: 50%;
+$navItemsBackgroundColor: rgb(75, 129, 75);
+$navItemsOriginX: 200px;
+$navItemsOriginY: 200px;
+
+
+.navBar{
+    outline: 1px solid blue;
+    position: relative;
+    &__item{
+        outline: 1px solid red;
+        position: absolute;
+        left:100px;
+        top:100px;
+        transform-origin:$navItemsOriginX $navItemsOriginY;
+
+        &_round{
+            width: $navItemsWidth;
+            height: $navItemsHeight;
+            border-radius: $navItemsRad;
+            background-color: $navItemsBackgroundColor;
+        }
+        @for $i from 1 through $navItems {
+            &_number-#{$i} {
+                transform: rotate($i * 360deg / $navItems);
+            }
+        }
+    }
+
+    &__itemLabel {
+        display: block;
+        width: $navItemWidth;
+        height: $navItemHeight;
+        line-height: $navItemHeight;
+        text-align: center;
+        @for $i from 1 through $navItems {
+            &_number-#{$i} {
+                transform: rotate($i * -360deg / $navItems);
+            }
+        }
+    }
+
+    @for $i from 1 through $navItems {
+        #navBarRadio-#{$i}:checked ~ div > label[for=navBarRadio-#{$i}] {
+           background-color: blue;
+        }
+
+    }
+
+}
+
+  

@@ -1,0 +1,102 @@
+$chessWidth: 80vmin;
+$chessHeight: 80vmin;
+$chessColorBlack: rgb(44, 33, 33);
+$chessColorWhite: rgb(202, 178, 178);
+$chessOutline: 1px solid $chessColorBlack;
+
+body {
+    margin-left: $chessWidth / 8;
+    margin-top: 0;
+    counter-reset: left right;
+    font-size: $chessWidth / 16;
+
+    &::before,
+    &::after {
+        content: " abcdefgh ";
+        display: inline-block;
+        width: $chessWidth - 3vmin;
+        height: $chessHeight / 8;
+        outline: $chessOutline;
+
+        letter-spacing: $chessHeight / 10;
+        padding-left: 3vmin;
+        align-items: center;
+        vertical-align: middle;
+        line-height: $chessHeight / 8;
+        font-size: 5vmin;
+        color: $chessColorBlack - red;
+    }
+
+    &>div {
+        width: $chessWidth;
+        height: $chessHeight;
+        outline: $chessOutline;
+        // position: relative;
+
+        display: grid;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(8, 1fr);
+
+        & div {
+            width: $chessWidth / 8;
+            height: $chessHeight / 8;
+            outline: $chessOutline;
+            background-color: $chessColorWhite;
+
+                &:nth-of-type(16n+1),
+                &:nth-of-type(16n+3),
+                &:nth-of-type(16n+5),
+                &:nth-of-type(16n+7),
+                &:nth-last-of-type(16n+1),
+                &:nth-last-of-type(16n+3),
+                &:nth-last-of-type(16n+5),
+                &:nth-last-of-type(16n+7) {
+                    background-color: $chessColorBlack;
+                }
+
+                &:nth-of-type(8n)::after,
+                &:nth-of-type(8n+1)::before {
+                    content: "";
+                    display: inline-block;
+                    position: relative;
+                    width: $chessWidth / 8;
+                    height: $chessHeight / 8;
+                    outline: $chessOutline;
+                    vertical-align: middle;
+                    line-height: $chessHeight / 8;
+                    text-align: center;
+                }
+
+                &:nth-of-type(8n)::after {
+                    right: -$chessWidth / 8;
+                }
+
+                &:nth-of-type(8n+1)::before {
+                    left: -$chessWidth / 8;
+                }
+
+                &:nth-of-type(8n)::after {
+                    left: $chessWidth / 8;
+                    counter-increment: left;
+                    content: counter(left) "";
+                }
+
+                 &:nth-of-type(8n+1)::before {
+                    left: -$chessWidth / 8;
+                 counter-increment: right;
+                     content: counter(right) "";
+                }
+
+                &:nth-of-type(1) {
+                    background-image: url('img.png');
+                    background-repeat: no-repeat;
+                    width: $chessWidth / 8;
+                    height:  $chessWidth / 8;
+                    background-position: calc(-8.2vmin * 0) calc(-18vmin / 2); 
+                    background-size: calc(8vmin * 6) calc(8vmin * 2);
+                    
+                }
+        }
+    }
+}
+

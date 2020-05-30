@@ -1,0 +1,88 @@
+body {
+  margin-left: 10vmin;
+  margin-top: 0;
+  counter-reset: left right;
+  font-size: 5vmin;
+}
+
+body::before, body::after {
+  content: " abcdefgh ";
+  display: inline-block;
+  width: 77vmin;
+  height: 10vmin;
+  outline: 1px solid #2c2121;
+  letter-spacing: 8vmin;
+  padding-left: 3vmin;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  vertical-align: middle;
+  line-height: 10vmin;
+  font-size: 5vmin;
+  color: #002121;
+}
+
+body > div {
+  width: 80vmin;
+  height: 80vmin;
+  outline: 1px solid #2c2121;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[8];
+      grid-template-rows: repeat(8, 1fr);
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+}
+
+body > div div {
+  width: 10vmin;
+  height: 10vmin;
+  outline: 1px solid #2c2121;
+  background-color: #cab2b2;
+}
+
+body > div div:nth-of-type(16n+1), body > div div:nth-of-type(16n+3), body > div div:nth-of-type(16n+5), body > div div:nth-of-type(16n+7), body > div div:nth-last-of-type(16n+1), body > div div:nth-last-of-type(16n+3), body > div div:nth-last-of-type(16n+5), body > div div:nth-last-of-type(16n+7) {
+  background-color: #2c2121;
+}
+
+body > div div:nth-of-type(8n)::after, body > div div:nth-of-type(8n+1)::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  width: 10vmin;
+  height: 10vmin;
+  outline: 1px solid #2c2121;
+  vertical-align: middle;
+  line-height: 10vmin;
+  text-align: center;
+}
+
+body > div div:nth-of-type(8n)::after {
+  right: -10vmin;
+}
+
+body > div div:nth-of-type(8n+1)::before {
+  left: -10vmin;
+}
+
+body > div div:nth-of-type(8n)::after {
+  left: 10vmin;
+  counter-increment: left;
+  content: counter(left) "";
+}
+
+body > div div:nth-of-type(8n+1)::before {
+  left: -10vmin;
+  counter-increment: right;
+  content: counter(right) "";
+}
+
+body > div div:nth-of-type(1) {
+  background-image: url("img.png");
+  background-repeat: no-repeat;
+  width: 10vmin;
+  height: 10vmin;
+  background-position: calc(-8.2vmin * 0) calc(-18vmin / 2);
+  background-size: calc(8vmin * 6) calc(8vmin * 2);
+}
+/*# sourceMappingURL=style.css.map */
