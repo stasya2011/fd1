@@ -1,8 +1,15 @@
 $chessWidth: 80vmin;
-$chessHeight: 80vmin;
+$chessHeight: $chessWidth;
 $chessColorBlack: rgb(44, 33, 33);
 $chessColorWhite: rgb(202, 178, 178);
 $chessOutline: 1px solid $chessColorBlack;
+$chesItem: 16;
+//размеры sprite
+$chessItemWidth: 10vmin;
+$chessItemSpriteWidth: $chessItemWidth * 6;
+$chessItemSpriteHeight: $chessItemWidth * 2;
+
+
 
 body {
     margin-left: $chessWidth / 8;
@@ -14,11 +21,10 @@ body {
         width: $chessWidth;
         height: $chessHeight;
         outline: $chessOutline;
-        // position: relative;
 
         display: grid;
-        grid-template-rows: repeat(8, 1fr);
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
         & div {
             width: $chessWidth / 8;
@@ -70,32 +76,112 @@ body {
                      content: counter(right) "";
                 }
 
-                &:nth-of-type(1) {
-                    background-image: url('img.png');
-                    background-repeat: no-repeat;
-                    width: $chessWidth / 8;
-                    height:  $chessWidth / 8;
-                    background-position: calc(-8.2vmin * 0) calc(-18vmin / 2); 
-                    background-size: calc(8vmin * 6) calc(8vmin * 2);                    
-                }
-        }
+                /*расстановка шахмат*/
+                @for $i from 1 through $chesItem{
+                &:nth-last-of-type(#{$i}),
+                &:nth-child(#{$i})
+                 {
+                     background-image: url('/29.05.2020_homework/img.png');
+                     background-repeat: no-repeat;
+                     width: $chessWidth / 8;
+                     height:  $chessWidth / 8;
+                     background-size: $chessItemSpriteWidth  $chessItemSpriteHeight;
+                       
+                    }
+                    &:nth-last-of-type(#{$i}){
+                        background-position:  calc(-10.5vmin * 5) 0;                         
+                    
+                    } 
+                    
+                    &:nth-child(#{$i}){                        
+                        background-position: calc(-10.5vmin * 5) calc(-20vmin/2);                        
+                           
+                    }               
+                      
+                  
+                    &:nth-of-type(1),
+                    &:nth-of-type(8){
+                        background-position: calc(-10.5vmin * 2) calc(-20vmin/2); 
+                    }
+
+                    &:nth-last-of-type(1),
+                    &:nth-last-of-type(8){
+                        background-position: calc(-10.5vmin * 2) 0; 
+                    }
+
+
+
+                    &:nth-last-of-type(2),
+                    &:nth-last-of-type(7){
+                        background-position: calc(-10.5vmin * 4) 0; 
+                    }
+
+                    &:nth-of-type(2),
+                    &:nth-of-type(7){
+                        background-position: calc(-10.5vmin * 4) calc(-20vmin/2); 
+                    }
+
+
+
+
+                    &:nth-of-type(3),
+                    &:nth-of-type(6){
+                        background-position: calc(-10.5vmin * 3) calc(-20vmin/2); 
+                    }
+
+
+                    &:nth-last-of-type(3),
+                    &:nth-last-of-type(6){
+                        background-position: calc(-10.5vmin * 3) 0; 
+                    }
+
+
+
+                    &:nth-of-type(4)
+                   {
+                        background-position: calc(-10.5vmin * 1) calc(-20vmin/2); 
+                    }
+
+
+                    &:nth-last-of-type(5){
+                        background-position: calc(-10.5vmin * 1) 0; 
+                    }
+
+
+                    
+                    &:nth-of-type(4)
+                   {
+                        background-position: calc(-10.5vmin * 0) calc(-20vmin/2); 
+                    }
+
+
+                    &:nth-last-of-type(5){
+                        background-position: calc(-10.5vmin * 0) 0; 
+                    }
+
+                }                
+            
+            }        
    
     }
-    &::before,
-    &::after {
-        content: " abcdefgh ";
-        display: inline-block;
-        width: $chessWidth - 3vmin;
-        height: $chessHeight / 8;
-        outline: $chessOutline;
+        &::before,
+        &::after {
+            content: " abcdefgh ";
+            display: inline-block;
+            width: $chessWidth - 3vmin;
+            height: $chessHeight / 8;
+            outline: $chessOutline;
+    
+            letter-spacing: $chessHeight / 10;
+            padding-left: 3vmin;
+            align-items: center;
+            vertical-align: middle;
+            line-height: $chessHeight / 8;
+            font-size: 5vmin;
+            color: $chessColorBlack - red;
+        }
 
-        letter-spacing: $chessHeight / 10;
-        padding-left: 3vmin;
-        align-items: center;
-        vertical-align: middle;
-        line-height: $chessHeight / 8;
-        font-size: 5vmin;
-        color: $chessColorBlack - red;
-    }
+
+
 }
 

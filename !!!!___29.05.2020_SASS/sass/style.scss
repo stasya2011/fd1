@@ -1,0 +1,78 @@
+$navBarWidth: 100px;
+$navBarHeight: 100px;
+$navBarBAckgroundColor: green;
+$navBarBorderRadius: 50%;
+$navItems: 10;
+$navItemTransformOriginX: 250px;
+$navItemTransformOriginY: 250px;
+
+
+
+.navBar{
+    outline: 1px solid red;
+    position:relative;
+
+    &__item{
+        position: absolute;
+        transition: 2s;
+        left: 100px;
+        top: 100px;
+        transform-origin: $navItemTransformOriginX $navItemTransformOriginY;
+        &_round{
+            width: $navBarWidth;
+            height:$navBarHeight;
+            background-color: $navBarBAckgroundColor;
+            border-radius: 50%;
+        }
+
+       @for $i from 1 through $navItems {
+             &_number-#{$i} {
+                transform: rotate($i * 360deg / $navItems);
+             }
+       }
+    }
+
+    &__label{
+        display: inline-block;
+        width:$navBarWidth;
+        height:$navBarHeight;
+        outline: 1px solid firebrick;
+        vertical-align: middle;
+        line-height: $navBarHeight;
+        text-align: center;
+
+        /*выровн.текст*/
+         @for $i from 1 through $navItems{
+             &_number-#{$i} {
+                 transform: rotate($i * -360deg / $navItems)
+            }
+        }
+    }
+
+     @for $i from 1 through $navItems{
+         #navBarRadio-#{$i}:checked ~ div>.navBar__label_number-#{$i}{
+             background-color: blue;
+             color: wheat;
+             font-size: 1.3em;
+         }
+
+        @for $j from 1 through $navItems{
+             #navBarRadio-#{$i}:checked  ~ .navBar__item_number-#{$j}{
+                transform: rotate(($j - $i + 1) * 360deg / $navItems);
+              
+             }
+
+            
+         }
+     }
+
+     @for $j from 1 through $navItems{
+         #navBarRadio-#{$i}:checked ~ .navBar__item_number-#{$j},
+         #navBarRadio-#{$i}:checked ~ div>.navBar__label_number-#{$i}
+         {
+             // transform: rotate(($j - $i + 1) * -360deg / $navItems);
+          transform-origin: right bottom;
+          
+     }
+ }
+}
