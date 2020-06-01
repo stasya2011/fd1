@@ -54,25 +54,18 @@ $navItemTransformOriginY: 250px;
              background-color: blue;
              color: wheat;
              font-size: 1.3em;
-         }
-
-        @for $j from 1 through $navItems{
-             #navBarRadio-#{$i}:checked  ~ .navBar__item_number-#{$j}{
-                transform: rotate(($j - $i + 1) * 360deg / $navItems);
-              
-             }
-
             
          }
-     }
 
-     @for $j from 1 through $navItems{
-         #navBarRadio-#{$i}:checked ~ .navBar__item_number-#{$j},
-         #navBarRadio-#{$i}:checked ~ div>.navBar__label_number-#{$i}
-         {
-             // transform: rotate(($j - $i + 1) * -360deg / $navItems);
-          transform-origin: right bottom;
-          
+        
+        // @for $j from 1 through $navItems{
+        //      #navBarRadio-#{$i}:checked  ~ .navBar__item_number-#{$j}{
+        //         transform: rotate(($i - $j + 1) * 360deg / $navItems);
+              
+        //      }
+
+            
+        //  }
      }
- }
+ 
 }

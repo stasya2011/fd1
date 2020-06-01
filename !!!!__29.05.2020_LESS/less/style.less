@@ -1,0 +1,28 @@
+@navBarWidth: 100px;
+@navBarHaight: 100px;
+@navBarBAckgroundColor: green;
+@navBarBorderRadius: 50%;
+@navItems: 10;
+@navItemTransformOriginX: 250px;
+@navItemTransformOriginY: 250px;
+
+body>.navBar{
+    outline: 1px solid @navBarBAckgroundColor;
+    position: relative;
+    .navBar__item{
+        position: absolute;      
+        transition: 2s;
+        left: 100px;
+        top: 100px;
+        transform-origin: @navItemTransformOriginX @navItemTransformOriginY;
+        &_round{
+            width: @navBarWidth;
+            width: @navBarHaight;
+            background-color: @navBarBAckgroundColor;
+            border-radius: @navBarBorderRadius;
+        }
+        
+    }
+        
+}
+    

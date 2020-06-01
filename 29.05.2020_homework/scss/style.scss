@@ -94,7 +94,7 @@ body {
                     } 
                     
                     &:nth-child(#{$i}){                        
-                        background-position: calc(-10.5vmin * 5) calc(-20vmin/2);                        
+                        background-position: calc(-10.5vmin * 5) calc(-20vmin / 2);                        
                            
                     }               
                       
@@ -137,26 +137,22 @@ body {
 
 
 
-                    &:nth-of-type(4)
-                   {
+                    &:nth-of-type(4)                   {
                         background-position: calc(-10.5vmin * 1) calc(-20vmin/2); 
+                    }
+
+
+                    &:nth-last-of-type(4){
+                        background-position: calc(-10.5vmin * 1) 0; 
+                    }
+                    
+                    &:nth-of-type(5){
+                        background-position: 0 calc(-20vmin/2); 
                     }
 
 
                     &:nth-last-of-type(5){
                         background-position: calc(-10.5vmin * 1) 0; 
-                    }
-
-
-                    
-                    &:nth-of-type(4)
-                   {
-                        background-position: calc(-10.5vmin * 0) calc(-20vmin/2); 
-                    }
-
-
-                    &:nth-last-of-type(5){
-                        background-position: calc(-10.5vmin * 0) 0; 
                     }
 
                 }                

@@ -1,0 +1,16 @@
+body > .navBar {
+  outline: 1px solid green;
+  position: relative;
+}
+body > .navBar .navBar__item {
+  position: absolute;
+  transition: 2s;
+  left: 100px;
+  top: 100px;
+  transform-origin: 250px 250px;
+}
+body > .navBar .navBar__item_round {
+  width: 100px;
+  background-color: green;
+  border-radius: 50%;
+}
