@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var age = Number(prompt("Cколько Вам лет?"));      
+        var retired;
+        var name = prompt("Ваше имя?");
+        var fatherName=prompt("Ваше отчество?");
+        var surname = prompt("Ваша фамилия?");
+        var gender= confirm('Вы мужчина?');   
+
+
+         /*через if*/
+
+        if (age <=65 ){
+        retired="нет"   
+        } else{
+             retired="да"
+            
+        }       
+      
+        if(gender==true){
+            gender = "мужской"
+        }else{
+            gender = "женский"
+        }
+
+        if(name, fatherName, surname !== null){
+            name;
+            fatherName;
+            surname ;
+        } else{
+            name = prompt("Ваше имя?");
+            fatherName=prompt("Ваше отчество?");
+            surname = prompt("Ваша фамилия?");
+            
+        }   
+
+        alert(` Ваше ФИО: ${surname} ${name} ${fatherName}\n 
+        Ваш возраст в годах: ${age}\n 
+        Ваш возраст через пять лет составит: ${age+5}\n
+        Ваш возраст сотавляет в днях: ${age*365}\n
+        Ваш пол: ${gender}\n 
+        Вы пенсионер: ${retired}`) 
+    
+        
+            
+
+
+
+
+       
+
+
+
+    </script>
+</body>
+</html>
