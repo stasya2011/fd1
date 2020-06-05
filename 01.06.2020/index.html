@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // var side = prompt("введите");
+        //  switch (side){
+        //     case 'up':
+        //     console.log('верхняя сторона');
+        //     break;
+
+        //     case 'right':
+        //     console.log('правая сторона');
+        //     break;
+
+        //     case 'down':
+        //     console.log('нижняя сторона');
+        //     break; 
+
+        //     case 'left':
+        //     console.log('левая сторона');
+        //     break;
+
+        //     default:
+        //     console.log('неизвестная сторона')
+             
+        //  }
+
+        var age = Number(prompt('Сколько вам лет?'));
+        var message;
+        switch(true){
+            case age>18 && age<=65:
+            message = "Вы совершеннолетний"
+            break;
+
+            case age<18:
+            message ="Вы не совершеннолетний"
+            break;
+
+            case age>65 && age<=80:
+            message = "Вы пожилой"
+            break;
+
+            default: 
+            message="Вы молодец!!"
+        }
+
+        alert(message)
+
+    </script>
+</body>
+</html>
