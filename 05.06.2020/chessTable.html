@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       
+        var chessTable = [
+            [], //0
+            [], //1
+            [], //2
+            [], //3
+            [], //4
+            [], //5
+            [], //6
+            [] //7
+        ]
+      
+        var letters ="abcdefgh"
+        for (var i = 0; i <= 7; i++) { // для перебора по вертикальным строкам с 0 до 7
+            for (var j = 0; j <= 7; j++) { // заходим  в строку (i) и там перебор по ячейкам (их 8 с 0 до 7)
+                chessTable[i][j] = {}; //создали пустой объект в массиве chessTable[строка][ячейка в строке]
+                chessTable[i][j].number = i + 1;// ткстроки i начинает нумеровать с 0
+                chessTable[i][j].letter = letters[j];
+                chessTable[i][j].figure = {}; //создали пустой объект в объекте chessTable[строка][ячейка в строке], ниже будем добавлять ключ:значение
+                /*Создаем шахматное поле*/
+                if (i % 2 === 0) { // в каждом четном ряду i (с 0 до 7) разукрась каждую четную ячейку j (с 0 до 7)
+                    if (j % 2 === 0) {
+                        chessTable[i][j].color = "black" // создали ключ:значение для объекта chessTable[i][j]
+                    } else {
+                        chessTable[i][j].color = "white" // создали ключ:значение для объекта chessTable[i][j]
+                    }
+                } else { // если ряд i не четный, то расскрась ячейки j рл следующиму условию
+                    if (j % 2 === 0) {
+                        chessTable[i][j].color = "white";
+                    } else {
+                        chessTable[i][j].color = "black"
+                    }
+                }
+            /*Раставляем шахматные фигуры*/
+
+                if (i === 1 || i === 6) { // если при условии что строка i очень равна 1 или 6, то ставим пешку
+                    chessTable[i][j].figure.rank = "пешка";
+                }
+
+                    
+                if (i === 1 || i === 2) { // если при условии что строка i очень равна 1 или 2, то ВСЕ элементы в chessTable[i][j].figure будут белыми
+                    chessTable[i][j].figure.color = "белый";
+                }
+
+                if (i === 6 || i === 7) { // если при условии что строка i очень равна 1 или 2, то ВСЕ элементы в chessTable[i][j].figure будут черными
+                    chessTable[i][j].figure.color = "черный" 
+            
+                } 
+               
+                
+            }
+         
+
+        }    
+        
+
+        chessTable[0][0].figure.rank=chessTable[0][7].figure.rank=chessTable[7][0].figure.rank=chessTable[7][7].figure.rank="ладья";
+        chessTable[0][1].figure.rank=chessTable[0][6].figure.rank=chessTable[7][1].figure.rank=chessTable[7][6].figure.rank="конь";
+        chessTable[0][2].figure.rank=chessTable[0][5].figure.rank=chessTable[7][2].figure.rank=chessTable[7][5].figure.rank="офицер";
+        chessTable[0][3].figure.rank=chessTable[0][4].figure.rank=chessTable[7][3].figure.rank=chessTable[7][4].figure.rank="конь";
+        chessTable[0][4].figure.rank=chessTable[7][4].figure.rank="ферзь";
+        chessTable[0][5].figure.rank=chessTable[7][5].figure.rank="кароль";
+
+        console.log(chessTable);
+
+    
+      
+    </script>
+</body>
+
+</html>

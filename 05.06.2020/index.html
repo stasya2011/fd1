@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(var age=prompt('Ваш возраст'); age ==null; age=prompt('Ваш возраст')){
+        //     console.log(age)
+        // }
+
+          var chessTable =[
+              ["белая ладья", "белый конь", "белый офицер", "белая королева","белый ферзь","белый офицер","белый конь","белая ладья",],
+              ["белая пешка", "белая пешка", "белая пешка", "белая пешка", "белая пешка", "белая пешка", "белая пешка", "белая пешка",],
+              [],
+              [],
+              [],
+              [],
+              ["черная пешка", "черная пешка", "черная пешка", "черная пешка", "черная пешка", "черная пешка", "черная пешка", "черная пешка"],
+              ["чернвя ладья", "черный конь", "черный офицер", "черная королева","черный ферзь", "черный офицер", "черный конь","чернвя ладья" ]
+              
+
+          ];
+
+          var cell = {
+              number: "2",
+              letter: "a",
+              color: "black", 
+              figure: {
+                  color:"white",
+                  rank: "horse"
+            }
+          }   
+
+          console.log(cell.figure.runk)
+
+          cell.number="4";
+          cell.letter="b" 
+          console.log(cell)             
+          var hash={
+              key: "value"
+          }
+          console.log(hash)
+          console.log(chessTable)
+          console.log(chessTable[7][3])
+
+    </script>
+</body>
+</html>
