@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var userData = [];
+        function reqvestUserData(){
+            var name = prompt("Имя");
+            var age = parseInt(prompt("Возраст"), 10);            
+            var work = prompt("Работа")
+            
+        return{
+            name, // name:name,
+            age, 
+            work
+        }
+
+        }
+
+        do{
+            userData[userData.length] = reqvestUserData();
+        }
+        while(confirm("ввести данные ещё одного пользователя")) // запрашивать до того момента пока не нажмем отмену
+
+        // и после нажатия отмены 
+        console.log(userData)
+    </script>
+</body>
+</html>

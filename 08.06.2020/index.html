@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr =[144, 55, 33,12, 11,27, 16, 44, 59];
+        function lessThen(num, testArray){
+           var resalt = [];
+           for(i=0; i<=testArray.length; i++){
+                if(num>=testArray[i]){ // возвращает если число больше или равно
+                   resalt[resalt.length] = testArray[i];  // result[0]=testArray[i]
+                    // break; // выйти из цикла 
+                }
+           }
+            return resalt
+        }
+
+        var userNumber=parseInt(prompt("введите число кторое необходимо вывести"));
+        console.log(lessThen( userNumber, arr))
+    </script>
+</body>
+</html>
