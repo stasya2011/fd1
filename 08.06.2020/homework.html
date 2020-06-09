@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+</head>
+<body>
+    <script>
+        const maxPopulation = "10000000";
+        const minArea = "300000";
+        
+        //1 создала пустой массив
+        var countryInf = [];
+        var peopleMax=[];
+        var areaMin=[];
+
+        var countryName;
+        var countryArea;
+        var countryPeople;
+
+        //2 создала функцию которая запрашивает данные пользователя, сохран. в переменной и возвращает через ретерн в виде объекта
+        function requestСountryInf(){
+            countryName = prompt("Введите имя страны", "Швеция");
+            countryArea = parseInt(prompt("Введите площадь страны", 449964), 10);
+            countryPeople = parseInt(prompt("Введите численность населения: ", 102300000), 10);
+
+            return{
+                countryName,
+                 countryArea,
+                countryPeople                
+             }
+            }
+           
+        //3 создаем цикл 
+
+        do{
+            countryInf[countryInf.length] = requestСountryInf(); //           
+            
+        }
+        while(confirm("Хотите ли продолжить?"))
+        console.log(countryInf); 
+
+
+
+        function getMaxPeople(){
+         for(var i=0; i<countryInf.length; i++){             
+                if (countryInf[i].countryPeople  < maxPopulation){ //швеция
+                     peopleMax[peopleMax.length]= countryInf[i].countryName                        
+            
+            }
+            
+        }  
+            
+        }       
+
+        
+
+        function getMinArea(){
+            for(var i = 0; i<countryInf.length; i++){
+                if(countryInf[i].countryArea > minArea){
+                    areaMin[areaMin.length]=countryInf[i].countryName
+                }
+            }
+        }
+     
+        getMaxPeople();
+        getMinArea();
+        
+        
+
+        
+        console.log(peopleMax);
+        console.log(areaMin)
+
+    </script>
+</body>
+</html>
