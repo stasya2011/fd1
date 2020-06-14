@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- в кавычках для js -->
+    <input type="button" value="жми на меня" onclick="alert('Привет'); click()"> 
+    <input type="button" value="жми на меня 2" onclick="click()">
+    <input type="button" value="жми на меня 3" onclick="click2('Нажата кнопка')">
+    <a href="javascript: alert('Добрый день')">Привет</a>
+    <a href="javascript: click3()">Как дела</a>
+    <script>
+
+        
+        // var el = document.querySelectorAll("input")
+        var el = document.querySelector("input")
+        // el.addEventListener('click', click)
+
+        el.addEventListener('click', function(e){
+            console.log("Мой обработчик событий")
+        })
+
+
+        
+        console.log(el)
+        function click(){
+            alert("доброе утро")
+        }
+
+        function click2(e){
+            console.log(e)
+        }
+
+        
+        function click3(){
+            alert("Хорошо")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .row{
+            position: relative;
+        }
+
+        .item{
+            position: absolute;
+            padding: 5px;
+           
+            transition: background-color, left 1s;
+        }
+  /* 
+        .item:nth-of-type(1){
+            order: 1;
+        }
+
+        .item:nth-of-type(2){
+            order: 2;
+        }
+
+        .item:nth-of-type(3){
+            order: 3;
+        } */
+        .active{
+            background-color: indigo;
+            /* color: white;
+            width:50px;
+            text-align: center;
+            display: inline-block; */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="item" style="left: 5px;">1</div>
+        <div class="item" style="left: 20px;">2</div>
+        <div class="item" style="left: 35px">3</div>
+    </div>
+
+    <script>
+        var currentElement = null; // равно пусто
+        var items = document.querySelectorAll('.item'); // сохраняем в переменную div.class=""
+
+        //нужно поменять ордер двух элементов
+        for(var i =0; i<items.length; i++){
+            items[i].addEventListener('click', function(e){
+                if(currentElement === null){ //был ли клик, заполнен ли карентэлемент, если нет, то запоминаем на какой объект кликнули
+                //при первом клике запоминаем на что кликнули первый раз, а при втором прохоже идем через else
+                currentElement = e.target; // 
+                console.log(currentElement) // 
+                currentElement.classList.add("active")
+                }else{
+                //    console.log(e.target.style.order);
+                //    currentElement.
+                var tnpOrder = currentElement.style.order;
+                currentElement.style.order = e.target.style.order;
+                e.target.style.order = tnpOrder;
+                currentElement.classList.remove("active");
+                currentElement = null;
+                }
+
+              
+            })
+        }
+    </script>
+</body>
+</html>
