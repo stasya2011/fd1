@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .video-bg{
+            position: fixed;
+            top:0;
+            left:0;
+            z-index: -10;
+            opacity: .5;
+        }
+
+        body{
+            color: red;
+        }
+
+        .img-bg{
+            display: none;
+        }
+
+        @media screen and (max-width: 640px) {
+            .video-bg{
+                display: none;
+            }
+
+            .img-bg{
+                display: block;
+                width: 100%;
+                position: fixed;
+
+
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <video src="https://www.youtube.com/watch?v=h-F36sUDoWM" class="video-bg" width=100% muted preload outplay loop></video>
+    <img src="http://pngimg.com/uploads/snowman/snowman_PNG9948.png" alt="" class="img-bg">
+    sdfsdfsdfsfsf
+</body>
+</html>

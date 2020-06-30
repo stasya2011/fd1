@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Абзац</p>
+    <ul>
+        <li><b>Элемент списка</b></li>
+    </ul>
+    <script>
+     
+
+      //1 вариант
+       for(let i = 0; i<=document.body.childNodes.length; i++){ //узлы от тега боди
+           console.log(document.body.childNodes[i])
+       }
+
+
+       //childNodes представляет собойпсевдомассив и для перебора псевдомассива можно использовать цикл for of:
+       for(let child of document.body.childNodes){
+           console.log(child) // for in лучше не использовать
+       }
+
+     
+
+    </script>
+</body>
+</html>

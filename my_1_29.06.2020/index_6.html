@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>О звездах</h1>
+    <div class="content-table">
+        <ul class="stars-list">
+            <li class="star">О сириусе</li>
+            <li class="star">Об альдромеде</li>
+            <li class="contact">Обратная связь</li>
+        </ul>
+    </div>
+
+    <script>
+        //используем метод matches
+      //с помощью querySelectorAll выбираем все пуг=нкты меню
+      let list = document.querySelectorAll('ul.stars-list>li') //указываем тег ul с классом, мы помним что  querySelectorAll выберит все лишки которые находятся в ul c таким классом .stars-list
+      for(let item of list){ // далее мы переберем его через цикл for of 
+          if(item.matches('li.star')) console.log(item) // и если list ИМЕЕТ(метод matches) классli.star' то выведи в консоль
+      }
+
+      //используем метод closest
+      let myList = document.querySelector('li.star'); //выбираем первый элемент с классом .star
+      console.log(myList.closest('.stars-list')) //<ul class="stars-list">;    ищем ближайшего предка элемента li.star у которого есть класс .stars-list и выводим в консоль (в консоль выведет ul)
+      console.log(myList.closest('.content-table')) //  <div class="content-table">;
+      console.log(myList.closest('h1')) //null, тк у лишка не находится в теге h1, те не является предком лишки
+    
+    //метод contains
+    //с помощьюэтого метода можно проверить имеется ли внутри контейнера div другие дочерний=к элементы
+    let divMy = document.querySelector('div.content-table'); //получаем ссылку на div
+    let ulMy = document.querySelector('ul.stars-list'); //получаем ссылку на элемент ul
+    if(divMy.contains(ulMy)){ // мы говорим, что если ulMy внутри divMy, то выведи в консоль фразу 
+        console.log("ul внутри div")
+    }
+    </script>
+</body>
+</html>

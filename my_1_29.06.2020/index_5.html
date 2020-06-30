@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <p>Планеты:</p>
+        <li>Меркурий</li>
+        <li>Венера</li>
+        <li>Земля</li>
+        <li>Марс</li>
+    </ol>
+
+    <ul>
+        <p>Звезды:</p>
+        <li>Солнце</li>
+        <li>Сириус</li>
+        <li>Капелла</li>
+        <li>Ригель</li>
+    </ul>
+
+    <script>
+        let list = document.querySelectorAll('ul>li')
+        console.log(list) // выводится массив NodeList(4) [li, li, li, li], но текстовой инфы нет
+        for(let elem of list){ 
+            console.log(elem)// выводим элементы списка   <li>Солнце</li> <li>Сириус</li> <li>Капелла</li> <li>Ригель</li>
+        }
+
+        let elemList=document.querySelectorAll('ol>li')
+        console.log(elemList[0]) //должен вывести МЕРКУРИЙ querySelectorAll переберет все лишки но выведет только первый или нудевой элемент массива
+    </script>
+</body>
+</html>
