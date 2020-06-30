@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: inline-block;
+            height: 10vw;
+            width:20vw;
+            background-color: lawngreen;
+            color:lightcoral;
+            padding: 2vw;
+            font-size: 2rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="out">
+        какой-то div id="out", перед ним планируется поставить созданный в js тег р
+    </div>
+    <script>
+        let p = document.createElement('p') // создали тег p;
+        let div = document.querySelector('#out')  //создали ссылку на существующий тег div
+        document.body.insertBefore(p, div) // выводим в поток переменную p которая должна находиться перед div c id="out"
+
+        p.classList.add('main') // на тег p я вешаю сцществующий стиль
+        // еще я могу записать какой-нибудь текст в созданный в js тег p:
+        p.innerHTML="Это текст который я написала с помощью js";
+        console.log(p)
+    </script>
+</body>
+</html>

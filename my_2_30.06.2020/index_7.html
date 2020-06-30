@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <body><!-- КОММЕНТАРИЙ --><h1>Заголовок страницы</h1>
+  <script>
+      //про innerHTML
+      let h1 = document.body.firstChild.nextSibling; //берем первый дочерний элемент элемента body, а затем у него берем следующий справа.Важно понимать, что если между тегом боди и комеентом и тегом h1 будет пробел, то в консоли выведет пустату
+      console.log(h1.innerHTML) // при помощи innerHTML выводим содержание h1
+
+      //с помощью innerHTML мы можем не только читать но и записывать 
+      h1.innerHTML="Измененный текст <u>загловка</u>"
+      h1.innerHTML+=" с добавлением текста"
+      console.log(h1.innerHTML)
+  </script>  
+</body>
+</html>
