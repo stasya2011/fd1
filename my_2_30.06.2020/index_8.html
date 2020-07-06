@@ -21,6 +21,9 @@
     <div id="out">
         какой-то div id="out", перед ним планируется поставить созданный в js тег р
     </div>
+    <div>
+        <p>какой-то текст</p>
+    </div>
     <script>
         let p = document.createElement('p') // создали тег p;
         let div = document.querySelector('#out')  //создали ссылку на существующий тег div
@@ -29,7 +32,12 @@
         p.classList.add('main') // на тег p я вешаю сцществующий стиль
         // еще я могу записать какой-нибудь текст в созданный в js тег p:
         p.innerHTML="Это текст который я написала с помощью js";
-        console.log(p)
+        console.log(p);
+
+        let myDiv = document.querySelector('div:nth-of-type(2)')
+        console.log(myDiv)
+        console.log(myDiv.previousElementSibling); // показывает предыдущий элемент
+        
     </script>
 </body>
 </html>
