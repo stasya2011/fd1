@@ -36,16 +36,33 @@
         for(var i=0; i<9; i++){
             document.getElementById('game').innerHTML+='<div class="block"></div>' // добавила в существующий див с id="game" еще девять дивов с class="block"
         }
+        var hod = 0;
 
-        //повесить события на .block:
-        
+        //повесить события на .block:        
 
         document.getElementById('game').onclick= function(event){ // этой функцией я отлавлтваю клик по всему блоку
             console.log(event) // показывают событие mouseEvent
             if(event.target.className == 'block'){
-               event.target.innerHTML="0"
+                if(hod%2==0){
+               event.target.innerHTML="X"; // используем  event.target.innerHTML а не this.innerHTML тк это пузыроковая техника, таргет показывает на каком элементе событие произошло
+               event.target.style.color="yellow" 
+                }
+                else{
+                    event.target.innerHTML = "0"
+                    event.target.style.color="red"
+                } 
+                hod++;
+                 // завершить игру по клику
+                 checkWinner(); 
+            }
+            // завершить игру по клику, проверка
+            function checkWinner(){
+                var allBlock = document.getElementsByClassName('block');
+                console.log(allBlock)
             }
         }
+
+        // завершить игру по клику
     </script>
 </body>
 </html>
