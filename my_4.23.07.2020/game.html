@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #game{
+            width: 150px;
+            height: 150px;
+            background-color: indigo;
+            color: white;
+
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .block{
+            width: 50px;
+            height: 50px;
+            float: left;
+            border: 1px solid wheat;
+            /* Если не будет свойства  box-sizing: border-box, то квадратики не вместятся в большой квадрат, поэтому используем  box-sizing: border-box; или outline, тк он не имеет веса */
+            box-sizing: border-box; /*ВАЖНо*/
+
+            vertical-align: middle;
+            line-height: 50px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="game"></div>
+
+    <script> // этот атрибут позволяет выполнить команду только после загрузки страницы. Если не будем использовать этот атрибут будет ошибка. можно обернуть весь скрипт в window.onload = function{   for(var i=0; i<9; i++){...}
+        for(var i=0; i<9; i++){
+            document.getElementById('game').innerHTML+='<div class="block"></div>' // добавила в существующий див с id="game" еще девять дивов с class="block"
+        }
+
+        //повесить события на .block:
+        
+
+        document.getElementById('game').onclick= function(event){ // этой функцией я отлавлтваю клик по всему блоку
+            console.log(event) // показывают событие mouseEvent
+            if(event.target.className == 'block'){
+               event.target.innerHTML="0"
+            }
+        }
+    </script>
+</body>
+</html>

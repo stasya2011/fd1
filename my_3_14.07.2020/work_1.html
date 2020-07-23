@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            display: inline-block;
+            position: absolute;
+            padding: 2vw;
+            outline: 5px solid yellow;
+
+        }
+        .block{
+            display: inline-block;
+            width: 100px; 
+            height: 100px;
+            outline: 2px solid red;
+            margin-right: 1vw;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 100px;
+            font-size: 24px;
+            text-transform: uppercase;
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative;
+
+        
+        }
+        .one{
+            background-color: lightcoral;
+        }
+        .two{
+            background-color: rgb(50, 173, 60);
+        }
+
+        .three{
+            background-color: rgb(231, 137, 14);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="block one">one</div>
+        <div class="block two">two</div>
+
+        <hr>
+
+        <div class="block three">three</div>
+
+        <div class="block four">four</div>
+    </div>
+    <script>
+        
+
+        //событие мыши
+
+        document.querySelector('.one').onclick = function(event){ // передаем событие. Вся инфа о событии 
+            console.log(event);
+            console.log('this is one');
+        }
+        
+        // document.querySelector('.two').onclick = function(){            
+        //     console.log('this is two')
+        // }
+
+        
+        // двойной щелчок мыши(тольок при выключенной консоли)
+        document.querySelector('.two').ondblclick = () =>{            
+            console.log('this is double');
+           
+        }
+
+        // контекстное меню
+        document.querySelector('.two').oncontextmenu = () =>{            
+            console.log('this is a right button');
+            return false // закрыть контекстное меню
+        }
+
+         // маус муве ю Не работает по пикселям, если у меня ширина 74px не будет 74+
+         let w = 74;
+         let h = 100;
+        document.querySelector('.three').onmousemove = () =>{            
+            console.log('срабатывает свойство mousemove');
+            document.querySelector('.three').style.width = w + 'px'; // при маусмуве увеличивается ширина на 1px 
+            document.querySelector('.three').style.height = h + 'px';
+            document.querySelector('.three').style.background = 'rgb(50, 17, 60)';
+            document.querySelector('.three').style.color = 'white';
+            document.querySelector('.three').style.lineHeight = h + 'px'; 
+            w++;
+            h++
+            
+        }
+
+        document.querySelector('.three').onmouseleave = () =>{            
+            console.log('срабатывает свойство mouseleave');
+            document.querySelector('.three').style.background="pink";
+            document.querySelector('.three').style.color = 'purple';
+            
+          
+            
+        }
+
+
+        document.querySelector('.four').onclick = function(){
+            this.style.right="-150px";
+        }
+        
+
+    
+    </script>
+
+    
+</body>
+</html>
